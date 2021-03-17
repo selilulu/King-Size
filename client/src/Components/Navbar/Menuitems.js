@@ -6,7 +6,7 @@ import { Link } from 'react-router-dom';
 export const MenuItems = [
     {
         title: 'Main',
-        url:<Link to='/Main'></Link>,
+        url:<Link to='./Main'></Link>,
         cName:'nav-links'
     },
     {
@@ -16,7 +16,7 @@ export const MenuItems = [
     },
     {
         title: 'Log in',
-        url:<Link to='/Login'></Link>,
+        url:<Link to='./Login'></Link>,
         cName:'nav-links'
     },
     {
