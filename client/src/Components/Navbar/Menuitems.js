@@ -1,8 +1,12 @@
+//import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
+<script src="https://unpkg.com/react-router-dom/umd/react-router-dom.min.js"></script>
+
 
 export const MenuItems = [
     {
         title: 'Main',
-        url:'#',
+        url:<Link to='/Main'></Link>,
         cName:'nav-links'
     },
     {
@@ -12,7 +16,7 @@ export const MenuItems = [
     },
     {
         title: 'Log in',
-        url:'#',
+        url:<Link to='/Login'></Link>,
         cName:'nav-links'
     },
     {

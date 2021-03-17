@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import { MenuItems } from "./Menuitems"
-import './Navbar.css'
+import { MenuItems } from "./Menuitems";
+import './Navbar.css';
 
  class Navbar extends React.Component { 
      
