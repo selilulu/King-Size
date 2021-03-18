@@ -1,4 +1,4 @@
-import React from 'react.js'
+import React from 'react'
 
 class  Main extends React.Component {
     

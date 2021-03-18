@@ -15,7 +15,7 @@ import './Navbar.css';
                     {MenuItems.map((item,index) => {
                         return (
                             <li key={index}>
-                                <a className={item.cName} href={item.url}>
+                                <a className={item.cName} href={item.url} Link to={"item.url"}>
                                 { item.title }
                             </a>
                             </li>
