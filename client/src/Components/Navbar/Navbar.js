@@ -1,35 +1,29 @@
 import React, { Component } from 'react';
-import { MenuItems } from "./Menuitems";
 import './Navbar.css';
-import { Link } from 'react-router-dom';
+import {BrowserRouter as Router,Link} from 'react-router-dom';
+import Route from 'react-router-dom/Route';
 
 
 
  class Navbar extends React.Component { 
-     
+
+ 
+
     render() {
         return(
+            <Router>
             <nav className="NavbarItems">
                 <h1 className="navbar-logo">Toegelang</h1>
                 <div className='menu-icon'>
-                     
+                    <ul className='nav-menu'>
+                    <li className=''><Link to="/Main">Main</Link></li>                           
+                    </ul>
                 </div>
-                <ul className='nav-menu'>
-                    {MenuItems.map((item,index) => {
-                        return (
-                            <li key={index}>
-                                <a className={item.cName} href={item.url} Link to='{ item.url }'>
-                                { item.title }
-                            </a>
-                            <Link to=" { item.url } "></Link>
-                            </li>
-                        
-                        )
-                    })}
-                </ul>
             </nav>
+            </Router>
         )
     }
-}
 
-export default Navbar
+ }
+
+export default Navbar;
