@@ -11,7 +11,6 @@ class  App extends React.Component {
     return (
     <div className="app">
       <Navbar />
-      <Login />
     </div>
   );
 }
