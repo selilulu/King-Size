@@ -1,38 +1,67 @@
-import React, { Component } from "react";
+import React, { useState } from "react";
+import 'bootstrap/dist/css/bootstrap.min.css';
+import Form from "react-bootstrap/Form";
+import Button from "react-bootstrap/Button";
 import "./Signup.css";
 
+export default function Login() {
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
 
-export default class SignUp extends Component {
-    render() {
-        return (
-            <form>
-                <h3>Sign Up</h3>
+  function validateForm() {
+    return email.length > 0 && password.length > 0;
+  }
 
-                <div className="form-group" >
-                    <label>First name</label>
-                    <input type="text" className="form-control col-xs-2" placeholder="First name" />
-                </div>
+  function handleSubmit(event) {
+    event.preventDefault();
+  }
 
-                <div className="form-group">
-                    <label>Last name</label>
-                    <input type="text" className="form-control" placeholder="Last name" />
-                </div>
+  return (
+    <div className="Signup">
 
-                <div className="form-group">
-                    <label>Email address</label>
-                    <input type="email" className="form-control" placeholder="Enter email" />
-                </div>
+<Form onSubmit={handleSubmit}>
+        <Form.Group size="lg" controlId="email">
+          <Form.Label>First Name</Form.Label>
+          <Form.Control
+            autoFocus
+            type="text"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+          />
+        </Form.Group>
 
-                <div className="form-group">
-                    <label>Password</label>
-                    <input type="password" className="form-control" placeholder="Enter password" />
-                </div>
-
-                <button type="submit" className="btn btn-primary btn-block">Sign Up</button>
-                <p className="forgot-password text-right">
-                    Already registered <a href="#">sign in?</a>
-                </p>
-            </form>
-        );
-    }
+        <Form.Group size="lg" controlId="email">
+          <Form.Label>Last Name</Form.Label>
+          <Form.Control
+            autoFocus
+            type="text"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+          />
+        </Form.Group>
+        
+      
+        <Form.Group size="lg" controlId="email">
+          <Form.Label>Email</Form.Label>
+          <Form.Control
+            autoFocus
+            type="email"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+          />
+        </Form.Group>
+        <Form.Group size="lg" controlId="password">
+          <Form.Label>Password</Form.Label>
+          <Form.Control
+            type="password"
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
+          />
+        </Form.Group>
+        <Button block size="lg" type="submit" disabled={!validateForm()}>
+          Login
+        </Button>
+      </Form>
+    </div>
+  );
 }
