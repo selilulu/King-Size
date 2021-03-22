@@ -2,6 +2,10 @@ main{
     margin: 0px;
 }
 
+.navbar-logo{
+    padding-top: 11px;
+}
+
 .NavbarItems {
     background: linear-gradient(90deg, rgb(110,94,254) 0%, rgba(73,63,252));
     height: 80px;
@@ -10,7 +14,7 @@ main{
     font-size: 1.2rem;
     position: relative;
     margin: 0;
-    padding-top: 0px;
+    
         
       }
     
@@ -23,6 +27,8 @@ main{
     text-align: center;
     justify-content: end;
     margin-right: 2rem;
+    padding-top: 20px;
+    
     
     
 }
@@ -30,7 +36,8 @@ main{
 .nav-links{
     color: white;
     text-decoration: none;
-    padding: 15px 1rem;
+    padding: 1rem 1rem;
+    
 }
 
 .nav-links:hover {

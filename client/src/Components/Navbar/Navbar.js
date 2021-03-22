@@ -17,7 +17,7 @@ import Signup from '../Signup/Signup';
         return(
             <Router>
             <nav className="NavbarItems">
-                <h1 className="navbar-logo">Toegelang</h1>
+                <h1 className="navbar-logo">SPEACTY</h1>
                 <div className='menu-icon'>
                     <ul className='nav-menu'>
                     <li>
