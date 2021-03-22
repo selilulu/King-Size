@@ -5,6 +5,7 @@ import Route from 'react-router-dom/Route.js';
 import Main from '../Main/Main';
 import Login from '../Login/Login';
 import Signup from '../Signup/Signup';
+import Events from '../Events/Events';
 
 
 
@@ -28,6 +29,9 @@ import Signup from '../Signup/Signup';
                     </li>    
                     <li >
                         <Link className='nav-links' to="/Signup">Signup</Link>
+                    </li>
+                    <li >
+                        <Link className='nav-links' to="/Events">Events</Link>
                     </li>                     
                     </ul>
                 </div>
@@ -44,6 +48,9 @@ import Signup from '../Signup/Signup';
                 </Route>
                 <Route exact strict path="/Signup">
                     <Signup/>
+                </Route>
+                <Route exact strict path="/Events">
+                    <Events/>
                 </Route>
         </Switch>
         </Router>

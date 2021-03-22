@@ -1,7 +1,7 @@
 
 body{
     margin:0;
-    background-image: url(world-art.png);
+    background-image: linear-gradient(rgba(255, 255, 255, .3), rgba(255, 255, 255, 0.5)), url('world-art.png');
     background-repeat: no-repeat;
     background-size: cover;
     background-blend-mode:overlay;
@@ -135,5 +135,4 @@ span{
 strong{
     letter-spacing: 24px;
 }
-
 
