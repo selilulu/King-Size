@@ -5,9 +5,6 @@ import Route from 'react-router-dom/Route.js';
 import Main from '../Main/Main';
 import Login from '../Login/Login';
 
-
-
-
  class Navbar extends React.Component { 
 
  
@@ -23,8 +20,9 @@ import Login from '../Login/Login';
                         <Link to="/Main">Main</Link>
                     </li>  
                     <li className=''>
-                        <Link to="/Login">Login</Link>
-                    </li>                         
+                        <Link to="/CHAT">chat</Link>
+                    </li> 
+                                         
                     </ul>
                 </div>
             </nav>
@@ -35,6 +33,7 @@ import Login from '../Login/Login';
                 <Route exact strict path="/Login">
                     <Login/>
                 </Route>
+               
 
         </Switch>
         </Router>
