@@ -16,7 +16,7 @@ import Login from '../Login/Login';
         return(
             <Router>
             <nav className="NavbarItems">
-                <h1 className="navbar-logo">Toegelang</h1>
+                <h1 className="navbar-logo">Speacty</h1>
                 <div className='menu-icon'>
                     <ul className='nav-menu'>
                     <li className=''>
@@ -29,7 +29,7 @@ import Login from '../Login/Login';
                 </div>
             </nav>
             <Switch>
-                <Route exact strict path="/Main">
+                <Route exact strict path="/">
                     <Main/>
                 </Route>
                 <Route exact strict path="/Login">
