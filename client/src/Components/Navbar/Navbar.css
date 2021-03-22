@@ -30,7 +30,7 @@ main{
 .nav-links{
     color: white;
     text-decoration: none;
-    padding: 1.8rem 1rem;
+    padding: 15px 1rem;
 }
 
 .nav-links:hover {
@@ -38,6 +38,7 @@ main{
     border-radius: 4px;
     transition:all 0.2s ease-out;
     text-decoration: none;
+    
 }
 
 h1{
