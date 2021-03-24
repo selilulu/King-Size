@@ -1,35 +1,78 @@
-import React from 'react';
-import Card from 'react-bootstrap/Card'
-import Button from 'react-bootstrap/Button'
+import React from 'react'
+import './Events.css'
+
 
 
 
 function Events() {
     return (
-        <div>
-            <Card style={{ width: '18rem' }}>
-  <Card.Img variant="top" src="holder.js/100px180" />
-  <Card.Body>
-    <Card.Title>Card Title</Card.Title>
-    <Card.Text>
-      Some quick example text to build on the card title and make up the bulk of
-      the card's content.
-    </Card.Text>
-    <Button variant="primary">Go somewhere</Button>
-  </Card.Body>
-</Card>
-        
-<Card style={{ width: '18rem' }}>
-<Card.Img variant="top" src="holder.js/100px180" />
-<Card.Body>
-<Card.Title>Card Title</Card.Title>
-<Card.Text>
-Some quick example text to build on the card title and make up the bulk of
-the card's content.
-</Card.Text>
-<Button variant="primary">Go somewhere</Button>
-</Card.Body>
-</Card>
+<div className='card-deck'>
+       <div className='card-container'>
+            <div className='image-conatiner'>
+                <img src='/images/logo.png' alt=''></img>
+            </div>
+            <div className='card-content'>
+                <div className='card-title'>
+                   <h3> Learn with a language game</h3>
+                </div>
+                <div className='class-body'>
+                   <p> In this online language game, learn with others news words and other expressions meanwhile having fun. </p>
+                </div>
+                <div className='btn'>
+                    <button>
+                        <a>
+                            View more
+                        </a>
+                    </button>
+
+                </div>
+            </div>
+       </div>
+
+    <div className='card-container'>
+    <div className='image-conatiner'>
+        <img src='/images/logo.png' alt=''></img>
+    </div>
+    <div className='card-content'>
+        <div className='card-title'>
+        <h3> Learn with a language game</h3>
+        </div>
+        <div className='class-body'>
+        <p> In this online language game, learn with others news words and other expressions meanwhile having fun. </p>
+        </div>
+        <div className='btn'>
+            <button>
+                <a>
+                    View more
+                </a>
+            </button>
+
+        </div>
+    </div>
+    </div>
+
+       <div className='card-container'>
+            <div className='image-conatiner'>
+                <img src='/images/logo.png' alt=''></img>
+            </div>
+            <div className='card-content'>
+                <div className='card-title'>
+                   <h3> Learn with a language game</h3>
+                </div>
+                <div className='class-body'>
+                   <p> In this online language game, learn with others news words and other expressions meanwhile having fun. </p>
+                </div>
+                <div className='btn'>
+                    <button>
+                        <a>
+                            View more
+                        </a>
+                    </button>
+
+                </div>
+            </div>
+       </div>
+
 </div>
     )
 }
