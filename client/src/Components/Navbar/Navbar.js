@@ -4,13 +4,8 @@ import {BrowserRouter as Router,Link, Switch} from 'react-router-dom';
 import Route from 'react-router-dom/Route.js';
 import Main from '../Main/Main';
 import Login from '../Login/Login';
-<<<<<<< HEAD
 import Signup from '../Signup/Signup.js';
-=======
-import Signup from '../Signup/Signup';
 import Events from '../Events/Events';
-
->>>>>>> 8e31f8032462f4baa10fe93afecd2c5e68e065b8
 
 
 

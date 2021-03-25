@@ -1,11 +1,7 @@
-
+    
 body{
     margin:0;
-<<<<<<< HEAD
     background-image: url(world3.jpg);
-=======
-    background-image: linear-gradient(rgba(255, 255, 255, .3), rgba(255, 255, 255, 0.5)), url('world.jpg');
->>>>>>> 8e31f8032462f4baa10fe93afecd2c5e68e065b8
     background-repeat: no-repeat;
     background-size: cover;
     background-blend-mode:white;
