@@ -10,10 +10,12 @@ main{
     background: linear-gradient(90deg, rgb(110,94,254) 0%, rgba(73,63,252));
     height: 80px;
     display: flex;
-    justify-content: center;
+    justify-content: left;
     font-size: 1.2rem;
     position: relative;
     margin: 0;
+    padding-left:15px;
+
     
         
       }
@@ -26,8 +28,9 @@ main{
     list-style: none;
     text-align: center;
     justify-content: end;
-    margin-right: 2rem;
-    padding-top: 20px;
+    margin-left: 25rem;
+    padding-top: 1.5rem;
+   
     
     
     

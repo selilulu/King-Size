@@ -4,8 +4,8 @@ import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
 import "./Signup.css";
 
-export default function Login() {
-  const [email, setEmail] = useState("");
+export default function Signup() {
+    const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
   function validateForm() {
@@ -59,7 +59,7 @@ export default function Login() {
           />
         </Form.Group>
         <Button block size="lg" type="submit" disabled={!validateForm()}>
-          Login
+          Sign up
         </Button>
       </Form>
     </div>

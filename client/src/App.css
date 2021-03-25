@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Kanit:wght@100;200&display=swap');
 
 body {
-    background-color: rgb(185, 175, 175);
+    background-color: rgb(189, 189, 144);
     margin:0px;
     font-family: 'Kanit', sans-serif;
     
@@ -12,7 +12,7 @@ body {
 }
 
 .signInBtn{
-    background-color : blue;
+    background-color : rgb(73, 82, 27);
     width:70px;
     margin-left:90%;
     cursor: pointer;

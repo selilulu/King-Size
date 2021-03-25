@@ -11,7 +11,7 @@ class  Main extends React.Component {
 
     render() {
       return (
-      <Router>
+      
         <div className='main'>  
             <div className='main-container'> 
               <div className='main-body'>    
@@ -26,13 +26,10 @@ class  Main extends React.Component {
               </div>
             </div>
         </div>
-          <Switch>
-              <Route exact strict path='/Login'>
-                <Login/>
-              </Route>
-          </Switch>
+        
+         
 
-      </Router>
+     
     );
   }
   }
