@@ -1,7 +1,12 @@
 html, body {
     font-family: 'Roboto', sans-serif;
     padding: 0;
-    margin: 0;
+    
+    margin:0;
+ /*   background-image: url(../icons/world.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-blend-mode:overlay;*/
   }
   
   #root {
@@ -18,7 +23,11 @@ html, body {
     text-align: center;
     height: 100vh;
     align-items: center;
-    background-color: #1A1A1D;
+   /* background-color: #1A1A1D;*/
+   background-image: url(../icons/world.jpg);
+   background-repeat: no-repeat;
+    background-size: cover;
+    background-blend-mode:overlay;
   }
   
   .joinInnerContainer {
@@ -32,7 +41,7 @@ html, body {
   }
   
   .heading {
-    color: white;
+    color:rgb(110,94,254);
     font-size: 2.5em;
     padding-bottom: 10px;
     border-bottom: 2px solid white;
@@ -42,12 +51,14 @@ html, body {
       color: #fff !important;
       text-transform: uppercase;
       text-decoration: none;
-      background: #2979FF;
+      /*background: #2979FF;*/
+      background: linear-gradient(90deg, rgb(110,94,254) 0%, rgba(73,63,252));
       padding: 20px;
       border-radius: 5px;
       display: inline-block;
       border: none;
       width: 100%;
+   
   }
   
   .mt-20 {

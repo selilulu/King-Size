@@ -51,17 +51,21 @@
   }
   
   .colorWhite {
-    color: white;
+    color: rgb(255, 255, 255);
   }
   
   .colorDark {
-    color: #353535;
+    color: #fff7f7;
   }
   
   .backgroundBlue {
-    background: #2979FF;
+    background: #0d1728;
   }
   
   .backgroundLight {
-    background: #F3F3F3;
+    background: #1DC690;
+  }
+  .sentText{
+
+
   }

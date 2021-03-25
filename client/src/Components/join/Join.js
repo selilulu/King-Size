@@ -15,7 +15,7 @@ return (
     <div className="joinInnerContainer">
       <h1 className="heading">Join</h1>
       <div>
-        <input placeholder="Name" className="joinInput" type="text" onChange={(event) => setName(event.target.value)} />
+        <input placeholder="Nick Name" className="joinInput" type="text" onChange={(event) => setName(event.target.value)} />
       </div>
       <div>
         <input placeholder="Room" className="joinInput mt-20" type="text" onChange={(event) => setRoom(event.target.value)} />
