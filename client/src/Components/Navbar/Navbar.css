@@ -7,7 +7,7 @@ main{
 }
 
 .NavbarItems {
-    background: linear-gradient(90deg, rgb(110,94,254) 0%, rgba(73,63,252));
+    background: linear-gradient(90deg, blue , lightblue);
     height: 80px;
     display: flex;
     justify-content: left;
@@ -37,7 +37,7 @@ main{
 }
 
 .nav-links{
-    color: white;
+    color: navy;
     text-decoration: none;
     padding: 1rem 1rem;
     
