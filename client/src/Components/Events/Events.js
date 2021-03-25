@@ -2,9 +2,14 @@ import React from 'react'
 import './Events.css'
 
 
-
+const styles ={
+    transition: 'all 1s ease-out'
+}
 
 function Events() {
+
+  
+
     return (
 <div className='card-deck'>
        <div className='card-container'>
