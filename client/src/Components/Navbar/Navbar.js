@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { Fragment } from "react";
 import './Navbar.css';
 import {BrowserRouter as Router,Link, Switch} from 'react-router-dom';
 import Route from 'react-router-dom/Route.js';
@@ -7,7 +7,8 @@ import Login from '../Login/Login.js';
 import Signup from '../Signup/Signup.js';
 import Events from '../Events/Events';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import Dropdown  from 'react-bootstrap/DropdownButton';
+import { MDBDropdown, MDBDropdownToggle, MDBDropdownMenu, MDBDropdownItem } from "mdbreact";
+
 
 
 
@@ -36,17 +37,18 @@ import Dropdown  from 'react-bootstrap/DropdownButton';
                         <Link className='nav-links' to="/Events">Events</Link>
                     </li>
                     <li >
-                    <Dropdown>
-  <Dropdown.Toggle variant="success" id="dropdown-basic">
-    Dropdown Button
-  </Dropdown.Toggle>
-
-  <Dropdown.Menu>
-    <Dropdown.Item href="#/action-1">English</Dropdown.Item>
-    <Dropdown.Item href="#/action-2">Dutch</Dropdown.Item>
-    <Dropdown.Item href="#/action-3">French</Dropdown.Item>
-  </Dropdown.Menu>
-</Dropdown>
+                    <MDBDropdown>
+      <MDBDropdownToggle caret color="primary">
+        MDBDropdown
+      </MDBDropdownToggle>
+      <MDBDropdownMenu basic>
+        <MDBDropdownItem>Action</MDBDropdownItem>
+        <MDBDropdownItem>Another Action</MDBDropdownItem>
+        <MDBDropdownItem>Something else here</MDBDropdownItem>
+        <MDBDropdownItem divider />
+        <MDBDropdownItem>Separated link</MDBDropdownItem>
+      </MDBDropdownMenu>
+    </MDBDropdown>
                     </li>                        
                     </ul>
                 </div>
