@@ -7,34 +7,22 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import "./main.css";
 
 
-
-
-// function clickMe(){
-// alert('you clicked me ');
-// }
-
-
-
 class  Main extends React.Component {
-    
 
     render() {
       return (
       
         <div className='main'>  
             <div className='main-container'> 
-              <div className='main-body'>
-                {/*<h1 className='main-title'></h1> */}
+              <div className='main-body'>    
                   <div className='main-divtext'>
                     <p className='main-text'>
                     <span>Discover</span><br/> our language<br/> activities with<br/> <strong> Speacty!</strong>   
                     </p>
                     <div className="main-divbutton">
-                      <Link className="main-button"to='/Login'>JOIN US</Link>
-                    </div>
+                   <Link className="main-button"to='/Login'>JOIN US</Link>
                   </div>
-                  {/* <p>Here at Speacty anyone can team up and make activites to learn a language together.</p> */}
-                  
+                  </div>
               </div>
             </div>
         </div>
@@ -45,5 +33,7 @@ class  Main extends React.Component {
     );
   }
   }
+
+  
   
   export default Main;
