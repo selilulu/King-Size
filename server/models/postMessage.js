@@ -1,16 +1,16 @@
 import mongoose from 'mongoose';
 
-const postSchema = mongoose.Schema({
+const postSchema = new mongoose.Schema({
 
-fullName:{
+FirstName:{
     type:String,
     required:true
 },
-userName:{
+LastName:{
     type:String,
     required:true
 },
-email:{
+Email:{
     type:String,
     required:true
 },
@@ -25,5 +25,5 @@ date:{
 
 })
 
-const PostMessage =mongoose.model('PostMessage',postSchema);
+const PostMessage =mongoose.model('mytable',postSchema);
 export default PostMessage;

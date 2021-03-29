@@ -13,7 +13,7 @@ export const getPosts =async (req, res) => {
     
  }
 
- export const createPosts =(req, res) => {
+ export const createPost =(req, res) => {
     res.send("Post creation");
     
  }
