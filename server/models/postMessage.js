@@ -2,21 +2,17 @@ import mongoose from 'mongoose';
 
 const postSchema = mongoose.Schema({
 
-fullName:{
+firstName:{
     type:String,
-    required:true
 },
-userName:{
+lastName:{
     type:String,
-    required:true
 },
 email:{
     type:String,
-    required:true
 },
 password:{
     type:String,
-    required:true
 },
 date:{
     type:Date,

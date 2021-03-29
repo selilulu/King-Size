@@ -1,16 +1,18 @@
 import express from 'express';
-import bodyParser from 'body-parser';
+//import bodyParser from 'body-parser';
 import mongoose from 'mongoose';
 import cors from 'cors';
 
 import myRoutes from './routes/routes.js';
 
-
 const app = express();
 
-app.use(bodyParser.json());
- app.use(bodyParser.urlencoded());
+app.use(express.json());
+app.use(express.urlencoded());
+app.use(cors());
 app.use("/user", myRoutes);
+
+
 
 
 const CONNECTION_URL = "mongodb+srv://selin:selin@cluster0.o2i6c.mongodb.net/mytable?retryWrites=true&w=majority"
