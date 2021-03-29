@@ -1,14 +1,14 @@
 import mongoose from 'mongoose';
 
-const postSchema = mongoose.Schema({
+const postSchema = new mongoose.Schema({
 
-firstName:{
+FirstName:{
     type:String,
 },
-lastName:{
+LastName:{
     type:String,
 },
-email:{
+Email:{
     type:String,
 },
 password:{
@@ -21,5 +21,5 @@ date:{
 
 })
 
-const PostMessage =mongoose.model('PostMessage',postSchema);
+const PostMessage =mongoose.model('mytable',postSchema);
 export default PostMessage;
