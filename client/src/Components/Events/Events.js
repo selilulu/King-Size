@@ -2,6 +2,7 @@ import React from 'react'
 import './Events.css'
 
 
+
 const styles ={
     transition: 'all 1s ease-out'
 }
