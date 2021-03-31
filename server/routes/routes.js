@@ -1,11 +1,11 @@
 import express, { request, response } from 'express';
 
  import {getPosts,createPost} from '../controllers/post.js'
-const postMessageCopy = require('../models/postMessage')
-const router = express.Router();
+const postMessageCopy = import('../models/postMessage.js')
+const route = express.Router();
 
 //router.get('/Signup', getPosts);
-router.post("/Signup", (req, res) => {
+route.post("/Signup", (req, res) => {
     const signeUpUser = new postMessageCopy({
 FirstName:req.body.firstName,
 LastName:req.body.LastName,
@@ -21,4 +21,4 @@ password:req.body.password,
     })
   });
 
-export default router;
+export default route;
