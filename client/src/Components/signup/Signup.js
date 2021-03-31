@@ -3,17 +3,29 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
 import "./Signup.css";
+import axios from 'axios'
 
 export default function Signup() {
-    const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
+    const [FirstName, setFirstName] = useState("");
+    const [LastName, setLastName] = useState("");
+    const [Email, setEmail] = useState("");
+    const [password, setpassword] = useState("");
 
   function validateForm() {
-    return email.length > 0 && password.length > 0;
+    return Email.length > 0 && password.length > 0;
   }
 
   function handleSubmit(event) {
     event.preventDefault();
+    const registered = {
+    FirstName:FirstName,
+    LastName:LastName,
+    Email:Email,
+    password:password
+  }
+  axios.post('http://localhost:5000/app/Signup', registered)
+  .then(Response => console.log(Response.data))
+  window.location = '/Events'
   }
 
   return (
@@ -25,8 +37,8 @@ export default function Signup() {
           <Form.Control
             autoFocus
             type="text"
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
+            value={FirstName}
+            onChange={(e) => setFirstName(e.target.value)}
           />
         </Form.Group>
 
@@ -35,8 +47,8 @@ export default function Signup() {
           <Form.Control
             autoFocus
             type="text"
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
+            value={LastName}
+            onChange={(e) => setLastName(e.target.value)}
           />
         </Form.Group>
         
@@ -46,7 +58,7 @@ export default function Signup() {
           <Form.Control
             autoFocus
             type="email"
-            value={email}
+            value={Email}
             onChange={(e) => setEmail(e.target.value)}
           />
         </Form.Group>
@@ -55,7 +67,7 @@ export default function Signup() {
           <Form.Control
             type="password"
             value={password}
-            onChange={(e) => setPassword(e.target.value)}
+            onChange={(e) => setpassword(e.target.value)}
           />
         </Form.Group>
         <Button block size="lg" type="submit" disabled={!validateForm()}>

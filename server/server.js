@@ -3,13 +3,16 @@
  dotenv.config();
 import express from 'express';
 //import bodyParser from 'body-parser';
-import mongoose from 'mongoose';
 import cors from 'cors';
 import mongoose from 'mongoose';
 import dotenv from 'dotenv';
-import { Console } from 'console';
-import path from 'path';
 import route from './routes/routes.js'
+import * as io from 'socket.io';
+import http from 'http';
+import router from './router.js';
+const PORT = process.env.PORT || 5000;
+import { addUser, removeUser, getUser, getUsersInRoom }from './users.js'
+const app = express();
 const options = {
     useNewUrlParser: true,
     useUnifiedTopology: true,
