@@ -33,6 +33,7 @@ const options = {
 
   const server = http.createServer(app);
    app.use(express.json())
+   app.use(cors());
    app.use('/app', route)
   const socketio = new io.Server(server,{
       cors: {
@@ -40,7 +41,7 @@ const options = {
         credentials: true
       }
     });
-  app.use(cors());
+  
   app.use(router);
 
 
