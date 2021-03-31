@@ -4,7 +4,7 @@ import {BrowserRouter as Router,Link, Switch} from 'react-router-dom';
 import Route from 'react-router-dom/Route.js';
 import Main from '../Main/Main';
 import Login from '../Login/Login.js';
-import Signup from '../signup/Signup.js';
+import Signup from '../Signup/Signup.js';
 import Events from '../Events/Events';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Dropdown  from 'react-bootstrap/DropdownButton';
