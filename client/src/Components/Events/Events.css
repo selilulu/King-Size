@@ -78,16 +78,15 @@ a{
     text-decoration: none;
 }
 
-@media only screen and (max-width: 800px) {
+@media only screen and (max-width: 1022px) {
     .card-deck{
         margin-top :5rem;
         display:grid;
-        grid-template-rows: 1fr 1fr 1fr;
-        grid-template-columns: 1fr;
-        margin-right: auto;
-        margin-left:auto;
-        justify-content: space-evenly;
-        justify-content: center;
-        row-gap: 25px;
+        grid-template-rows: 35% 35% 35% ;
+        grid-template-columns: 15%;
+        justify-content: center; 
+        justify-content: space-evenly; 
+        row-gap: 3%;   
+        width: 100%;
     }
 }

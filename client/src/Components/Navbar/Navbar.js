@@ -15,7 +15,7 @@ import DropdownButton from 'react-bootstrap/DropdownButton';
 
  class Navbar extends React.Component { 
     languages={
-        myArray:[<button href='#'>English"</button>, <button href='#'> "French"</button>,<button href='#'>"Dutch"</button>]
+        myArray:['English', 'French','Dutch']
     }
  
     
