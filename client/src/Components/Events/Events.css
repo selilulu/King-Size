@@ -1,8 +1,13 @@
+
+
 .card-deck{
     margin-top :5rem;
     display:grid;
     grid-template-columns: 20% 20% 20%;
-    justify-content: space-evenly;    
+    justify-content: space-evenly; 
+    background-color:rgba(234, 214, 247, 0.493) ;
+  
+ 
 }
 
 .card-container{
@@ -76,4 +81,8 @@ a{
     text-transform:uppercase;
     color:#1B9CFC;
     text-decoration: none;
+}
+
+.jenga-card{
+    background-color:rgba(34, 199, 97, 0.534) ;
 }

@@ -1,19 +1,25 @@
 import React, { Component } from 'react';
 import './Navbar.css';
-import {BrowserRouter as Router,Link, Switch} from 'react-router-dom';
 import Route from 'react-router-dom/Route.js';
 import Main from '../Main/Main';
 import Login from '../Login/Login.js';
 import Signup from '../Signup/Signup.js';
 import Events from '../Events/Events';
+import Game from '../Events/Game.js';
+import GameDetails from '../Events/GameDetails.js';
+
+import {BrowserRouter as Router,Link, Switch} from 'react-router-dom';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import Dropdown  from 'react-bootstrap/DropdownButton';
+import {Dropdown, DropdownButton} from 'react-bootstrap';
 
 
 
 
  class Navbar extends React.Component { 
-
+       
+    languages={
+        myArray:["English","French","Dutch"]
+    }
  
 
     render() {
@@ -36,21 +42,19 @@ import Dropdown  from 'react-bootstrap/DropdownButton';
                         <Link className='nav-links' to="/Events">Events</Link>
                     </li>
                     <li >
-                    <Dropdown>
-  <Dropdown.Toggle variant="success" id="dropdown-basic">
-    Dropdown Button
-  </Dropdown.Toggle>
-
-  <Dropdown.Menu>
-    <Dropdown.Item href="#/action-1">English</Dropdown.Item>
-    <Dropdown.Item href="#/action-2">Dutch</Dropdown.Item>
-    <Dropdown.Item href="#/action-3">French</Dropdown.Item>
-  </Dropdown.Menu>
-</Dropdown>
+     
                     </li>                        
                     </ul>
                 </div>
+        
+        <DropdownButton varient="success" title ="--Select Language--" >
+            {this.languages.myArray.map(data=>(
+            <Dropdown.Item title={data}>{data}</Dropdown.Item>
+            ))}
+        </DropdownButton>
             </nav>
+            
+     
             <Switch>
                 <Route exact strict path="/">
                     <Main/>
@@ -66,6 +70,12 @@ import Dropdown  from 'react-bootstrap/DropdownButton';
                 </Route>
                 <Route exact strict path="/Events">
                     <Events/>
+                </Route>
+                <Route exact strict path="/Game">
+                    <Game/>
+                </Route>
+                <Route exact strict path="/GameDetails">
+                    <GameDetails/>
                 </Route>
         </Switch>
         </Router>
