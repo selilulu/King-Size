@@ -8,7 +8,7 @@
 
 .image{
     width:800px;
-    height:500px;
+    height:450px;
     border-radius:10px;
     padding-top:0px;
 }
@@ -35,4 +35,12 @@
 }
 
 
-
+@media all and (max-width:660px){
+    .image {
+    width:400px;
+    height:250px;
+    border-radius:10px;
+    padding-top:0px;
+}
+    
+}

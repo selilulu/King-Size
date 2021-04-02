@@ -69,7 +69,7 @@ function Events() {
                 <div className='btn'>
                 <Link className="link-btn" to='/debate'>Learn More</Link>
 
-                    <button onClick={()=> window.open("http://localhost:3000/join")}>
+                    <button onClick={()=> "/join"}>
                     Join
                     </button>
 

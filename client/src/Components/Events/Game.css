@@ -24,9 +24,9 @@
 
 .question{
     margin:20px;
-    color:orange;
-    font-weight: 900;
-    font-size: 30px;
+    color:rgb(95, 95, 95);
+    font-weight:700;
+    font-size: 33px;
     letter-spacing: 1px;
 }
 
@@ -46,6 +46,11 @@
     color:white;
 
 
+}
+@media all and (max-width:660px){
+    .image-button{
+        height:400px
+    }
 }
 
 

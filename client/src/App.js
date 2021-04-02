@@ -19,16 +19,8 @@ import { BrowserRouter as Router, Route } from "react-router-dom";
 const App = () => {
   return (
     <>
-    <Router>
-      <Route path="/" exact component={Navbar} />
-      <Route path="/join" exact component={Join} />
-      <Route path="/chat" component={Chat} />
-      <Route path="/login" exact component={Login}/>
-      <Route path="/Game" exact component={Game}/>
-      <Route path="/GameDetails" exact component={GameDetails}/>
-      <Route path="/main" exact component={Main}/>
-
-    </Router>
+    <Navbar/>
+    
     </>
   );
 }
