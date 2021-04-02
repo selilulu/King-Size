@@ -1,39 +1,50 @@
 
+
+ dotenv.config();
 import express from 'express';
 //import bodyParser from 'body-parser';
-import mongoose from 'mongoose';
 import cors from 'cors';
-
+import mongoose from 'mongoose';
+import dotenv from 'dotenv';
+import route from './routes/routes.js'
+import * as io from 'socket.io';
+import http from 'http';
+import router from './router.js';
+const PORT = process.env.PORT || 5000;
+import { addUser, removeUser, getUser, getUsersInRoom }from './users.js'
+const app = express();
+const options = {
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
+    useCreateIndex: true,
+    useFindAndModify: false,
+    autoIndex: false,
+    poolSize: 10,
+    bufferMaxEntries: 0,
+    connectTimeoutMS: 0,
+    socketTimeoutMS: 0,
+    family: 4
+  };
+  mongoose.connect(process.env.DB, options)
+    .then(() => console.log("MongoDB Connected..."))
+    .catch(err => console.log(err));
 
 
   const server = http.createServer(app);
-
+   app.use(express.json())
+   app.use(cors());
+   app.use('/app', route)
   const socketio = new io.Server(server,{
       cors: {
         origin: "http://localhost:3000",
         credentials: true
       }
     });
-  app.use(cors());
+  
   app.use(router);
 
 
-
-
-
-
-
-
-
-
-
-
-/*,{cors:{
-    origin:'http://localhost:3000',
-    methods:[‘GET,‘POST’],
-    credentials:true
-    }
-    })*/
+ 
 
 
 

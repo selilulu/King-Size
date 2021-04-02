@@ -11,7 +11,7 @@ class  Main extends React.Component {
       
             <div className='main-container container--narrow'> 
                <div className="world">
-                 <img src="images/Optimized-world3.jpg" alt="world map image"/>
+                 <img  className="image" src="images/Optimized-world3.jpg" alt="world map image"/>
                  </div>
 
               <div className='main-body'>    

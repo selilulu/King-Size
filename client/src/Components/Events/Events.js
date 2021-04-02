@@ -5,7 +5,6 @@ import Join from '../chatroom/components/join/Join';
 import Chat from '../chatroom/components/chat/Chat';
 
 
-
 const styles ={
     transition: 'all 1s ease-out'
 }
@@ -14,6 +13,7 @@ function Events() {
 
   
     return (
+
 <div className='card-deck'>
        <div className='card-container'>
             <div className='image-conatiner'>

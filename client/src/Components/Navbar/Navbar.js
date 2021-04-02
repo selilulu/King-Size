@@ -16,9 +16,8 @@ import {Dropdown, DropdownButton} from 'react-bootstrap';
 
 
  class Navbar extends React.Component { 
-       
     languages={
-        myArray:["English","French","Dutch"]
+        myArray:['English', 'French','Dutch']
     }
  
 
@@ -42,16 +41,17 @@ import {Dropdown, DropdownButton} from 'react-bootstrap';
                         <Link className='nav-links' to="/Events">Events</Link>
                     </li>
                     <li >
-     
+                        <div>
+
+                        <DropdownButton variant='primary' title="Select language" >
+                        {this.languages.myArray.map(data=>(
+                        <option title={data}>{data}</option>
+                        ))}
+                        </DropdownButton>
+                        </div>
                     </li>                        
                     </ul>
                 </div>
-        
-        <DropdownButton varient="success" title ="--Select Language--" >
-            {this.languages.myArray.map(data=>(
-            <Dropdown.Item title={data}>{data}</Dropdown.Item>
-            ))}
-        </DropdownButton>
             </nav>
             
      
@@ -84,4 +84,4 @@ import {Dropdown, DropdownButton} from 'react-bootstrap';
 
  }
 
-export default Navbar;
+export default Navbar

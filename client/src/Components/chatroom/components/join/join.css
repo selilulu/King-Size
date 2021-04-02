@@ -41,8 +41,8 @@ html, body {
   }
   
   .heading {
-    color:rgb(110,94,254);
-    font-size: 2.5em;
+    color:orange;
+    font-size: 10 em;
     padding-bottom: 10px;
     border-bottom: 2px solid white;
   }

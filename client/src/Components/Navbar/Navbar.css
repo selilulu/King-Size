@@ -15,9 +15,6 @@ main{
     position: relative;
     margin: 0;
     padding-left:15px;
-
-    
-        
       }
     
 
@@ -29,10 +26,7 @@ main{
     text-align: center;
     justify-content: end;
     margin-left: 25rem;
-    padding-top: 1.5rem;
-   
-    
-    
+    padding-top: 1.5rem; 
     
 }
 
@@ -53,7 +47,6 @@ main{
 
 h1{
     color:white;
-    
 }
 
 
