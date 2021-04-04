@@ -7,19 +7,14 @@ main{
 }
 
 .NavbarItems {
- 
-        background: linear-gradient(90deg, blue , lightblue);
-        height: 80px;
-        display: flex;
-        justify-content: left;
-        font-size: 1.2rem;
-        position: relative;
-        margin: 0;
-        padding-left:15px;
-          
-
-    
-        
+    background: linear-gradient(90deg, blue , lightblue);
+    height: 80px;
+    display: flex;
+    justify-content: left;
+    font-size: 1.2rem;
+    position: relative;
+    margin: 0;
+    padding-left:15px;
       }
     
 
@@ -31,10 +26,7 @@ main{
     text-align: center;
     justify-content: end;
     margin-left: 25rem;
-    padding-top: 1.5rem;
-   
-    
-    
+    padding-top: 1.5rem; 
     
 }
 
@@ -55,5 +47,6 @@ main{
 
 h1{
     color:white;
-    
 }
+
+

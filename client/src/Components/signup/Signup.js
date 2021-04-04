@@ -3,7 +3,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
 import "./Signup.css";
-import axios from 'axios'
+const axios = require('axios');
 
 export default function Signup() {
     const [FirstName, setFirstName] = useState("");

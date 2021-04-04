@@ -1,19 +1,27 @@
 import React, { Component } from 'react';
 import './Navbar.css';
-import {BrowserRouter as Router,Link, Switch} from 'react-router-dom';
 import Route from 'react-router-dom/Route.js';
 import Main from '../Main/Main';
 import Login from '../Login/Login.js';
 import Signup from '../signup/Signup.js';
 import Events from '../Events/Events';
+import Game from '../Events/Game.js';
+import GameDetails from '../Events/GameDetails.js';
+import Join from '../chatroom/components/join/Join.js';
+import Chat from '../chatroom/components/chat/Chat.js';
+
+
+import {BrowserRouter as Router,Link} from 'react-router-dom';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import Dropdown  from 'react-bootstrap/DropdownButton';
+import {Dropdown, DropdownButton} from 'react-bootstrap';
 
 
 
 
  class Navbar extends React.Component { 
-
+    languages={
+        myArray:['English', 'French','Dutch']
+    }
  
 
     render() {
@@ -36,42 +44,33 @@ import Dropdown  from 'react-bootstrap/DropdownButton';
                         <Link className='nav-links' to="/Events">Events</Link>
                     </li>
                     <li >
-                    <Dropdown>
-  <Dropdown.Toggle variant="success" id="dropdown-basic">
-    Dropdown Button
-  </Dropdown.Toggle>
+                        <div>
 
-  <Dropdown.Menu>
-    <Dropdown.Item href="#/action-1">English</Dropdown.Item>
-    <Dropdown.Item href="#/action-2">Dutch</Dropdown.Item>
-    <Dropdown.Item href="#/action-3">French</Dropdown.Item>
-  </Dropdown.Menu>
-</Dropdown>
+                        <DropdownButton variant='primary' title="Select language" >
+                        {this.languages.myArray.map(data=>(
+                        <option title={data}>{data}</option>
+                        ))}
+                        </DropdownButton>
+                        </div>
                     </li>                        
                     </ul>
                 </div>
             </nav>
-            <Switch>
-                <Route exact strict path="/">
-                    <Main/>
-                </Route>
-                <Route exact strict path="/Login">
-                    <Login/>
-                </Route>
-                <Route exact strict path="/Main">
-                    <Main/>
-                </Route>
-                <Route exact strict path="/Signup">
-                    <Signup/>
-                </Route>
-                <Route exact strict path="/Events">
-                    <Events/>
-                </Route>
-        </Switch>
+            <Route path="/" exact component={Main}/>
+            <Route path="/main" exact component={Main}/>
+            <Route path="/join" exact component={Join} />
+            <Route path="/chat" exact component={Chat} />
+            <Route path="/login" exact component={Login}/>
+            <Route path="/signup" exact component={Signup}/>
+            <Route path="/events" exact component={Events}/>
+            <Route path="/game" exact component={Game}/>
+            <Route path="/gameDetails" exact component={GameDetails}/>
+     
+            
         </Router>
         )
     }
 
  }
 
-export default Navbar;
+export default Navbar

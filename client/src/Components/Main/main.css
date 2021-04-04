@@ -1,11 +1,18 @@
     
-body{
+*{
     margin:0;
-    background-image: url(Optimized-world3.jpg);
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-blend-mode:white;
+    padding:0;
+    box-sizing:0;
+    
 }
+
+.image{
+    height:100%;
+    width:100%;
+
+
+}
+
 
 .main-container{
     font-family:'Kanit', sans-serif;
@@ -18,6 +25,8 @@ body{
     justify-content: center;
     align-content: center;
 }
+
+
 
 .main-divtext{
     width: auto;
@@ -129,3 +138,23 @@ strong{
 }
 
 
+@media all and (max-width:660px){
+    .main-divtext{
+        font-size:1rem;
+        color:darkcyan;
+    }
+    .main-text{
+        margin:20px;
+    }
+    span{
+        font-size:40px;
+    }
+    strong{
+        letter-spacing: 4px;
+    }
+    .main-button{
+        font-size:15px;
+
+    }
+   
+}
