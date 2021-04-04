@@ -1,9 +1,8 @@
-import express, { request, response} from 'express';
+import express, { request, response, Router} from 'express';
 
- import {getPosts,createPost} from '../controllers/post.js'
 const route = express.Router();
-import postMessage from '../models/postMessage.js'
-import bcrypt from 'bcrypt'
+import {register, login, forgotpassword, resetpassword} from '../controllers/auth.js'
+/*import bcrypt from 'bcrypt'
 //router.get('/Signup', getPosts);
 route.post("/Signup", async (request, response) => {
     const saltPassword = await bcrypt.genSalt(10)
@@ -21,6 +20,13 @@ password:securePassword
     .catch(error=>{
         response.json(error)
     })
-  });
+  });*/
+ 
+
+
+route.route("/Signup").post(register);
+route.route("/login").post(login);
+route.route("/forgotpassword").post(forgotpassword);
+route.route("/resetpassword/:resetToken").post(resetpassword);
 
 export default route;

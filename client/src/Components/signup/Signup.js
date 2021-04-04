@@ -23,9 +23,10 @@ export default function Signup() {
     Email:Email,
     password:password
   }
-  axios.post('http://localhost:5000/app/Signup', registered)
+  axios.post('http://localhost:5000/app/auth/Signup', registered)
   .then(Response => console.log(Response.data))
-  window.location = '/Events'
+  window.open("http://localhost:3000/Events")
+  
   }
 
   return (
