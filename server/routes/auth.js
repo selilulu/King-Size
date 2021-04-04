@@ -27,6 +27,6 @@ password:securePassword
 route.route("/Signup").post(register);
 route.route("/login").post(login);
 route.route("/forgotpassword").post(forgotpassword);
-route.route("/resetpassword/:resetToken").post(resetpassword);
+route.route("/resetpassword/:resetToken").put(resetpassword);
 
 export default route;

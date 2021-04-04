@@ -1,5 +1,6 @@
 import User from '../models/User.js'
 import sendEmail from '../utils/sendEmail.js';
+import crypto from 'crypto';
 const register = async (req, res, next) =>{
     const {FirstName, LastName, Email, password} = req.body
 
@@ -8,7 +9,7 @@ const register = async (req, res, next) =>{
             FirstName,
              LastName,
               Email,
-               password 
+            password 
         });
        sendToken(user, 201, res)
     }
@@ -20,7 +21,7 @@ const register = async (req, res, next) =>{
     }
 };
 const login = async (req, res, next) =>{
-    const {Email, password} = req.body
+    const {Email, password} = req.body;
    if (!Email || !password){
        res
        .status(400)
@@ -53,7 +54,7 @@ const forgotpassword = async (req, res, next) =>{
 
        await user.save()
 
-       const resetUrl = `http://localhost:3000/passwordreset/${resetToken}`;
+       const resetUrl = `http://localhost:3000/resetpassword/${resetToken}`;
        const message = `
       <h1>You have requested a password reset</h1>
       <p>Please make a put request to the following link:</p>
@@ -77,8 +78,33 @@ res.status(500).json({success:false, data: "email not send"})
 next(error);
    }
 };
-const resetpassword = (req, res, next) =>{
-    res.send("rresetpassword")
+const resetpassword = async (req, res, next) =>{
+   const resetPasswordToken = crypto
+   .createHash("sha256")
+   .update(req.params.resetToken)
+   .digest("hex");
+   try{
+       const user = await User.findOne({
+        resetPasswordToken : resetPasswordToken,
+        resetPasswordExpire:{ $gt: Date.now()}
+       })
+       if (!user){
+        res.status(400).json({success:false, data: "Invalid Reset Token"})
+
+       }
+
+
+
+       user.password = req.body.password;
+       
+       user.resetPasswordToken = undefined;
+       user.resetpasswordExpire = undefined;
+       await user.save();
+       res.status(200).json({success:true, data: "Password Reset Success"})
+
+   } catch (error){
+  next(error)
+}
 };
 
 const sendToken = (user,statusCode, res)=>{
