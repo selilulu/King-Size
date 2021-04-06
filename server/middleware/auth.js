@@ -13,7 +13,7 @@ const protect = async(req, res, next)=>{
     if (!token){
         res
         .status(401)
-        .json({success: false, error: "Not authoriwed to qcces this route"});
+        .json({success: false, error: "Not authoriwed to acces this route"});
     }
     try{
         const decoded = jwt.verify(token, process.env.JWT_SECRET);

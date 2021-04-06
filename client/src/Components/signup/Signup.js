@@ -3,37 +3,59 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
 import "./Signup.css";
+
 const axios = require('axios');
 
-export default function Signup() {
+export default function Signup({history}) {
     const [FirstName, setFirstName] = useState("");
     const [LastName, setLastName] = useState("");
     const [Email, setEmail] = useState("");
     const [password, setpassword] = useState("");
+    const [error, setError] = useState("");
 
   function validateForm() {
     return Email.length > 0 && password.length > 0;
   }
 
-  function handleSubmit(event) {
-    event.preventDefault();
-    const registered = {
-    FirstName:FirstName,
-    LastName:LastName,
-    Email:Email,
-    password:password
-  }
-  axios.post('http://localhost:5000/app/auth/Signup', registered)
-  .then(Response => console.log(Response.data))
-  window.open("http://localhost:3000/Events")
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+
+    const config = {
+      header: {
+        "Content-Type": "application/json",
+      },
+    };
+
+    
+    try {
+      const { data } = await axios.post(
+        "http://localhost:5000/app/auth/Signup",
+        {
+          FirstName,
+          LastName,
+          Email,
+          password
+        },
+        config
+      );
+
+      localStorage.setItem("authToken", data.token);
+
+      history.push("/");
+    } catch (error) {
+      setError(error.response.data.error);
+      setTimeout(() => {
+        setError("");
+      }, 5000);
+    }
+  };
   
-  }
 
   return (
     <div className="Signup">
 
 <Form onSubmit={handleSubmit}>
-        <Form.Group size="lg" controlId="email">
+        <Form.Group size="lg" controlId="FirstName">
           <Form.Label>First Name</Form.Label>
           <Form.Control
             autoFocus
@@ -43,7 +65,7 @@ export default function Signup() {
           />
         </Form.Group>
 
-        <Form.Group size="lg" controlId="email">
+        <Form.Group size="lg" controlId="LastName">
           <Form.Label>Last Name</Form.Label>
           <Form.Control
             autoFocus

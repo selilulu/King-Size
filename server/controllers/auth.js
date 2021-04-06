@@ -14,7 +14,7 @@ const register = async (req, res, next) =>{
        sendToken(user, 201, res)
     }
     catch(error) {
-        res.status(500).json({
+      return  res.status(500).json({
             success:false,
             error: error.message,
         })
@@ -30,15 +30,15 @@ const login = async (req, res, next) =>{
    try{
        const user =  await User.findOne({Email}).select("+password");
        if(!user){
-           res.status(404).json({success: false , error: 'Invalid credentials'})
+       return    res.status(404).json({success: false , error: 'Invalid credentials'})
        }
        const isMatch = await user.matchPasswords(password);
        if(!isMatch){
-           res.status(404).json({success:false, error:"Invalid credentiels"})
+          return res.status(404).json({success:false, error:"Invalid credentiels"})
        }
        sendToken(user, 200, res)
    }catch(error){
-    res.status(500).json({success:false, error:error.message})
+   return  res.status(500).json({success:false, error:error.message})
    }
 };
 const forgotpassword = async (req, res, next) =>{
@@ -47,7 +47,7 @@ const forgotpassword = async (req, res, next) =>{
        const user = await User.findOne({Email});
 
        if(!user){
-        res.status(404).json({success:false, error:"email could not be sent"})
+       return res.status(404).json({success:false, error:"email could not be sent"})
 
        }
        const resetToken =  user.getResetPasswordToken();
@@ -89,7 +89,7 @@ const resetpassword = async (req, res, next) =>{
         resetPasswordExpire:{ $gt: Date.now()}
        })
        if (!user){
-        res.status(400).json({success:false, data: "Invalid Reset Token"})
+      return  res.status(400).json({success:false, data: "Invalid Reset Token"})
 
        }
 
