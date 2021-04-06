@@ -25,7 +25,7 @@ class Game extends React.Component {
                 <div className="image-button">
                     <h2>Every Sunday at 14:00</h2>
                     <h2>Meet up point: Ghent Center at Cafe Renee!</h2>
-                    <Link className="main-button game">Participate</Link>
+                    <Link to ="/participants" className="main-button game">Participate</Link>
                     <Link className="main-button game" onClick={()=> window.open("http://localhost:3000/join")} >ChatRoom</Link>
                 </div>
             </div>

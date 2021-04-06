@@ -9,6 +9,8 @@ import Game from '../Events/Game.js';
 import GameDetails from '../Events/GameDetails.js';
 import Join from '../chatroom/components/join/Join.js';
 import Chat from '../chatroom/components/chat/Chat.js';
+import Participants from '../Events/Participants.js';
+
 
 
 import {BrowserRouter as Router,Link} from 'react-router-dom';
@@ -19,10 +21,7 @@ import {Dropdown, DropdownButton} from 'react-bootstrap';
 
 
  class Navbar extends React.Component { 
-    languages={
-        myArray:['English', 'French','Dutch']
-    }
- 
+   
 
     render() {
         return(
@@ -44,14 +43,7 @@ import {Dropdown, DropdownButton} from 'react-bootstrap';
                         <Link className='nav-links' to="/Events">Events</Link>
                     </li>
                     <li >
-                        <div>
-
-                        <DropdownButton variant='primary' title="Select language" >
-                        {this.languages.myArray.map(data=>(
-                        <option title={data}>{data}</option>
-                        ))}
-                        </DropdownButton>
-                        </div>
+                        
                     </li>                        
                     </ul>
                 </div>
@@ -65,8 +57,7 @@ import {Dropdown, DropdownButton} from 'react-bootstrap';
             <Route path="/events" exact component={Events}/>
             <Route path="/game" exact component={Game}/>
             <Route path="/gameDetails" exact component={GameDetails}/>
-     
-            
+            <Route path="/participants" exact component={Participants}/>
         </Router>
         )
     }

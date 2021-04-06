@@ -69,10 +69,6 @@ function Events() {
                 <div className='btn'>
                 <Link className="link-btn" to='/debate'>Learn More</Link>
 
-                    <button onClick={()=> "/join"}>
-                    Join
-                    </button>
-
                 </div>
                    
                

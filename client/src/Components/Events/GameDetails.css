@@ -7,7 +7,7 @@
 }
 
 .step1-div, .step2-div, .step3-div,.step-reminder-div{
-    background-color: rgb(165, 203, 253);
+    background-color: rgba(83, 135, 231, 0.678);
     width:250px;
     height:250px;
     margin:40px auto;
