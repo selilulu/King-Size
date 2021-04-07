@@ -1,81 +1,122 @@
-import React, { Component } from 'react';
+import React, { useState } from 'react';
+import { Button } from './Button';
+import { Link, BrowserRouter as  Router, Route, } from 'react-router-dom';
 import './Navbar.css';
-import {BrowserRouter as Router,Link, Switch} from 'react-router-dom';
-import Route from 'react-router-dom/Route.js';
+import Dropdown from './Dropdown';
+
+/*import  Route  from 'react-router-dom/Route.js';*/
 import Main from '../Main/Main';
 import Login from '../Login/Login.js';
 import Signup from '../Signup/Signup.js';
 import Events from '../Events/Events';
 // import Game from '../Events/Game.js';
-import 'bootstrap/dist/css/bootstrap.min.css';
-import DropdownButton from 'react-bootstrap/DropdownButton';
+// import GameDetails from '../Events/GameDetails.js';
+import Join from '../chatroom/components/join/Join.js';
+import Chat from '../chatroom/components/chat/Chat.js';
 
+function Navbar() {
+  const [click, setClick] = useState(false);
+  const [dropdown, setDropdown] = useState(false);
 
+  const handleClick = () => setClick(!click);
+  const closeMobileMenu = () => setClick(false);
 
-
- class Navbar extends React.Component { 
-    languages={
-        myArray:['English', 'French','Dutch']
+  const onMouseEnter = () => {
+    if (window.innerWidth < 1085) {
+      setDropdown(false);
+    } else {
+      setDropdown(true);
     }
- 
+  };
+
+  const onMouseLeave = () => {
+    if (window.innerWidth < 1085) {
+      setDropdown(false);
+    } else {
+      setDropdown(false);
+    }
+  };
+
+  return (
+      <Router>
     
+      <nav className='navbar'>
+        <Link to='/' className='navbar-logo' onClick={closeMobileMenu}>
+          SPEACTY
+          <i class='fab fa-firstdraft' />
+        </Link>
+        <div className='menu-icon' onClick={handleClick}>
+          <i className={click ? 'fas fa-times' : 'fas fa-bars'} />
+        </div>
+        <ul className={click ? 'nav-menu active' : 'nav-menu'}>
+          <li className='nav-item'>
+            <Link to='/main' className='nav-links' onClick={closeMobileMenu}>
+              Main
+            </Link>
+          </li>
+          <li
+            className='nav-item'
+            onMouseEnter={onMouseEnter}
+            onMouseLeave={onMouseLeave}
+          >
+            <Link
+              to='/events'
+              className='nav-links'
+              onClick={closeMobileMenu}
+            >
+              Events <i className='fas fa-caret-down' />
+            </Link>
+            {dropdown && <Dropdown />}
+          </li>
+          <li className='nav-item'>
+            <Link
+              to='/Login'
+              className='nav-links'
+              onClick={closeMobileMenu}
+            >
+              Log in
+            </Link>
+          </li>
+          <li className='nav-item'>
+            <Link
+              to='/contact-us'
+              className='nav-links'
+              onClick={closeMobileMenu}
+            >
+              Log out
+            </Link>
+          </li>
+          <li>
+            <Link
+              to='/sign-up'
+              className='nav-links-mobile'
+              onClick={closeMobileMenu}
+            >
+              Sign Up
+            </Link>
+            
+          </li>
+          
+        </ul>
+        <Button />
+        
+      </nav>
+    
+ 
+    {/* <Route  path="/" component={Main} /> */}
 
-    render() {
-        return(
-            <Router>
-            <nav className="NavbarItems">
-                <h1 className="navbar-logo">SPEACTY</h1>
-                <div className='menu-icon'>
-                    <ul className='nav-menu'>
-                    <li>
-                        <Link className='nav-links' to="/Main">Main</Link>
-                    </li>  
-                    <li >
-                        <Link className='nav-links' to="/Login">Login</Link>
-                    </li>    
-                    <li >
-                        <Link className='nav-links' to="/Signup">Signup</Link>
-                    </li>
-                    <li >
-                        <Link className='nav-links' to="/Events">Events</Link>
-                    </li>
-                    <li >
-                        <div>
+    <Route path="/main" exact component={Main}/>
+    <Route path="/join" exact component={Join} />
+    <Route path="/chat" exact component={Chat} />
+    <Route path="/Login" exact component={Login}/>
+    <Route path="/Signup" exact component={Signup}/>
+    <Route path="/events" exact component={Events}/> 
+    {/* <Route path="/game" exact component={Game}/> */}
+    {/* <Route path="/gameDetails" exact component={GameDetails}/>
+    <Route path="/forgotpassword" exact component={ForgotPassword}/> */}
+    {/* <Route path="/resetpassword/:resetToken" exact component={Resetpassword}/> */}
+</Router>
+  );
+}
 
-                        <DropdownButton variant='primary' title="Select language" >
-                        {this.languages.myArray.map(data=>(
-                        <option title={data}>{data}</option>
-                        ))}
-                        </DropdownButton>
-                        </div>
-                    </li>                        
-                    </ul>
-                </div>
-            </nav>
-            <Switch>
-                <Route exact strict path="/">
-                    <Main/>
-                </Route>
-                <Route exact strict path="/Login">
-                    <Login/>
-                </Route>
-                <Route exact strict path="/Main">
-                    <Main/>
-                </Route>
-                <Route exact strict path="/Signup">
-                    <Signup/>
-                </Route>
-                <Route exact strict path="/Events">
-                    <Events/>
-                </Route>
-                {/* <Route exact strict path="/Game">
-                    <Game/>
-                </Route> */}
-        </Switch>
-        </Router>
-        )
-    }
-
- }
-
-export default Navbar
+export default Navbar;
