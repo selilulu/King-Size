@@ -68,7 +68,10 @@ setSelected({...selected, [choice.value]: true});
 setCurrent(choice);
 }
 };
-
+const reset = () => {
+  setCurrent(null);
+  setSelected({});
+};
   
 return (
 <>
@@ -130,6 +133,9 @@ return (
 
     ))}
     </ul>
+    <button className="reset" onClick={() => reset()}>
+        reset
+      </button>
     </>
 );
  
