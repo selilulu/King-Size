@@ -7,7 +7,7 @@ export default function Game() {
   const [choices, setChoices]= useState([]);
   const [current, setCurrent ] = useState(null);
   const [selected, setSelected ] = useState({});
-  const [EngVoices, setngVoices ] = useState([]);
+  const [EngVoices, setEngVoices ] = useState([]);
 
   const [FrenVoices, setFrenVoices ] = useState([]);
 
@@ -17,6 +17,15 @@ export default function Game() {
 useEffect(()=>  {
 setTimeout(() => {
   const voices = synthRef.current.getVoices();
+
+  const voiceA = voices.filter((voice)=> voice.lang.substr(0,2) === data.fr.langA.code);
+  setEngVoices(voiceA);
+  setEngVoice(random (voiceA))
+
+
+  const voiceB = voices.filter((voice)=> voice.lang.substr(0,2) === data.fr.langB.code);
+  setFrenVoices(voiceB);
+  setFrenVoice(random (voiceB))
   console.log(voices)
 }, 100);
 
@@ -43,8 +52,10 @@ data.fr.pairs.some(
 );
 
 const choose = (choice) => {
-const utter = new SpeechSynthesisUtterance(choice.value);
-synthRef.current.speak(utter);
+const utterThis= new SpeechSynthesisUtterance(choice.value);
+
+utterThis.voice = choice.lang === data.fr.langA.code ? EngVoice : FrenVoice;
+synthRef.current.speak(utterThis);
 if(current){
 if (isMatch(current.value, choice.value)){
   setSelected({...selected, [choice.value]: true});
@@ -58,15 +69,47 @@ setCurrent(choice);
 }
 };
 
-console.log(selected)
   
 return (
 <>
 <a>Practice French</a>
 <h2>Choose your accent</h2>
 <div className="luanguages">
-<ul className= "voices"></ul>
-<ul className= "voices"></ul>
+<ul className= "voices">
+<li>{data.fr.langA.name}:</li>
+          {EngVoices.map((voice) => (
+            <li key={voice.name}>
+              <button
+                onClick={() => {
+                  setEngVoice(voice);
+                }}
+                className={
+                  EngVoice && EngVoice.name === voice.name ? "selected" : ""
+                }
+              >
+                {voice.name}
+              </button>
+            </li>
+          ))}
+        </ul>
+<ul className= "voices">
+  <li>{data.fr.langB.name}:</li>
+          {FrenVoices.map((voice) => (
+            <li key={voice.name}>
+              <button
+                onClick={() => {
+                  setFrenVoice(voice);
+                }}
+                className={
+                  FrenVoice && FrenVoice.name === voice.name ? "selected" : ""
+                }
+              
+              >
+                {voice.name}
+              </button>
+            </li>
+          ))}
+        </ul>
 </div>
 <h2>Choose the pairs</h2>
 <ul className= "choices">
