@@ -8,7 +8,7 @@ export default function IndexPage() {
         <Link href="/">
           <a>
             
-            <img src="/home/houdid/becode/King-Size/client/src/Components/game/pages/matching.jpg" />
+            <img src="./matching.jpg" />
           </a>
         </Link>
       </h1>

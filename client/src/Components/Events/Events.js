@@ -69,8 +69,7 @@ function Events() {
               
                 
                 <div className='btn'>
-                <Link className="link-btn" to='/debate'>Learn More</Link>
-
+                <Link className="link-btn" to='/join'>Learn More</Link>
                 </div>
               
                    
