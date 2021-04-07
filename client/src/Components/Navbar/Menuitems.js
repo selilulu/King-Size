@@ -1,27 +1,18 @@
-//import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
-<script src="https://unpkg.com/react-router-dom/umd/react-router-dom.min.js"></script>
-
-
 export const MenuItems = [
     {
-        title: 'Main',
-        url:'/Main',
-        cName:'nav-links'
+      title: 'Board Game',
+      path: '/BoardGame',
+      cName: 'dropdown-link',
     },
     {
-        title: 'Contact us',
-        url:'#',
-        cName:'nav-links'
+      title: 'Online Game',
+      path: '/OnlineGame',
+      cName: 'dropdown-link',
     },
     {
-        title: 'Log in',
-        url:'/Login',
-        cName:'nav-links'
+      title: 'Debating online',
+      path: '/DebatingOnline',
+      cName: 'dropdown-link',
     },
-    {
-        title: 'Sign up',
-        url:'#',
-        cName:'nav-links'
-    }
-]
+    
+  ];
