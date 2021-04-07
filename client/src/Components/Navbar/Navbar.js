@@ -8,7 +8,6 @@ import Main from '../Main/Main';
 import Login from '../Login/Login.js';
 import Signup from '../signup/Signup.js';
 import Events from '../Events/Events';
-import Game from '../Events/Game.js';
 import GameDetails from '../Events/GameDetails.js';
 import Join from '../chatroom/components/join/Join.js';
 import Chat from '../chatroom/components/chat/Chat.js';
@@ -18,8 +17,8 @@ import {BrowserRouter as Router,Link} from 'react-router-dom';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import {Dropdown, DropdownButton} from 'react-bootstrap';
 import Resetpassword from '../Resetpassword/Resetpassword'
-
-
+import GameIndex from '../game/GameIndex'
+import Game from '../game/Game';
 
 import PrivateRoute from '../routing/PrivateRouting'
 const Navbar = ()=>{
@@ -80,10 +79,12 @@ const Navbar = ()=>{
         <Route path="/login" exact component={Login}/>
         <Route path="/signup" exact component={Signup}/>
         <Route path="/events" exact component={Events}/>
-        <Route path="/game" exact component={Game}/>
         <Route path="/gameDetails" exact component={GameDetails}/>
         <Route path="/forgotpassword" exact component={ForgotPassword}/>
         <Route path="/resetpassword/:resetToken" exact component={Resetpassword}/>
+
+        <Route path="/onlinegame" exact component={GameIndex}/>
+        <Route path="/game" exact component={Game}/>
 
 
 
