@@ -14,12 +14,12 @@ export default function IndexPage() {
       </h1>
       <ul>
         <li>
-          <Link href="/en/[lang]" as="/en/es">
-            <a>Practice Spanish</a>
+        <Link to="/gamede" >
+            <a>Practice Dutch</a>
           </Link>
         </li>
         <li>
-        <Link to="/game" >
+        <Link to="/gamefr" >
         <a>Practice French</a>
             </Link>
          

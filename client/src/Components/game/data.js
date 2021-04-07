@@ -1,15 +1,29 @@
 const data = {
-    es: {
+    de: {
       pairs: [
-        ["the bank", "el banco"],
-        ["the restaurant", "el restaurante"],
-        ["a potato", "una papa"],
-        ["cow", "vaca"],
-        ["chair", "silla"],
-        ["I'm beautiful", "soy hermoso"],
+        ["tell", "vertellen"],
+        ["air", "lucht"],
+        ["also", "ook"],
+        ["home", "thuis"],
+        ["large", "grote"],
+        ["must", "moet"],
+        ["such", "dergelijke"],
+        ["follow", "volgen"],
+        ["men", "mannen"],
+        ["light", "licht"],
+        ["mother", "moeder"],
+        ["new", "nieuwe"],
+        ["place", "plaats"],
+        ["after", "na"],
+        ["only", "alleen"],
+        ["boy", "jongen"],
+        ["same", "hetzelfde"],
+        ["about", "over"],
+        ["many", "veel"],
+        ["day", "day"],
       ],
       langA: { code: "en", name: "English" },
-      langB: { code: "es", name: "Spanish" },
+      langB: { code: "de", name: "Dutch" },
     },
     fr: {
       pairs: [

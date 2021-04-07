@@ -22,7 +22,9 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import {Dropdown, DropdownButton} from 'react-bootstrap';
 import Resetpassword from '../Resetpassword/Resetpassword'
 import GameIndex from '../game/GameIndex'
-import Game from '../game/Game';
+import GameFr from '../game/GameFr';
+import GameDe from '../game/GameDe';
+
 
 import PrivateRoute from '../routing/PrivateRouting'
 const Navbar = ()=>{
@@ -89,7 +91,9 @@ const Navbar = ()=>{
         <Route path="/resetpassword/:resetToken" exact component={Resetpassword}/>
 
         <Route path="/onlinegame" exact component={GameIndex}/>
-        <Route path="/game" exact component={Game}/>
+        <Route path="/gamefr" exact component={GameFr}/>
+        <Route path="/gamede" exact component={GameDe}/>
+
 
 
 

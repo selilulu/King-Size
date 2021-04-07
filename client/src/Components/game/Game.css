@@ -12,3 +12,8 @@ li {
 .selected{
     color: orangered;
 }
+.choices{
+display: inline-block;
+
+
+}

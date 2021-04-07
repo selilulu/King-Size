@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import data from './data'
 import random from './random'
 import "./Game.css";
-export default function Game() {
+export default function GameFr() {
   const synthRef = React.useRef(window.speechSynthesis);
   const [choices, setChoices]= useState([]);
   const [current, setCurrent ] = useState(null);
