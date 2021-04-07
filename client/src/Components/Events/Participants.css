@@ -1,0 +1,15 @@
+.part-container{
+    background-color:#1dc690d2;
+
+}
+
+.part-preview{
+    background-color: rgba(232, 240, 210, 0.589);
+    margin:0 auto;    
+   
+}
+
+.part-title{
+    font-size:35px;
+    color:white;
+}

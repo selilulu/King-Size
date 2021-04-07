@@ -11,6 +11,10 @@ import Events from '../Events/Events';
 import GameDetails from '../Events/GameDetails.js';
 import Join from '../chatroom/components/join/Join.js';
 import Chat from '../chatroom/components/chat/Chat.js';
+import Participants from '../Events/Participants.js';
+
+
+
 import Private from '../Private'
 import ForgotPassword from '../forgotpassword/Forgotpassword';
 import {BrowserRouter as Router,Link} from 'react-router-dom';
@@ -22,6 +26,7 @@ import Game from '../game/Game';
 
 import PrivateRoute from '../routing/PrivateRouting'
 const Navbar = ()=>{
+
 
 
        const languages={
