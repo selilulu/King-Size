@@ -3,11 +3,12 @@ import ParticipantsList from './ParticipantsList.js'
 import './Participants.css';
 
 
+
 function Participants() {
     const [participants,setParticipants]= useState(null);
 
     useEffect( ()=> {
-        fetch('http://localhost:8000/participants')
+        fetch('http://localhost:5000/participants')
         .then(res =>{
             return res.json();
         })

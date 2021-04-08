@@ -47,12 +47,13 @@ const Forgotpassword= () => {
             Please enter the email address you register your account with. We
             will send you reset password confirmation to this email
           </p>
-          <label htmlFor="email">Email:</label>
+          <label className="email-label" htmlFor="email">E-mail:</label>
           <input
+            className="input-forgot-password"
             type="email"
             required
             id="email"
-            placeholder="Email address"
+            placeholder=" Enter your email address "
             value={Email}
             onChange={(e) => setEmail(e.target.value)}
           />

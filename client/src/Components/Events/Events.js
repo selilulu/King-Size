@@ -27,7 +27,7 @@ function Events() {
                    <p> In this online language game, learn with others news words and other expressions meanwhile having fun. </p>
                 </div>
                 <div className='btn'>
-                <Link className="link-btn" to='/onlinegame'>Learn More</Link>
+                <Link className="link-btn" to='/gameindex'>Learn More</Link>
 
 
                 </div>

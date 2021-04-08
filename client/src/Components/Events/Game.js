@@ -1,4 +1,4 @@
-import {React , useState} from 'react';
+import React from 'react';
 import './Game.css';
 import ImageSlider from './ImageSlider'
 import {SliderData} from './SliderData.js'
@@ -8,8 +8,31 @@ import Join from '../chatroom/components/join/Join';
 import Chat from '../chatroom/components/chat/Chat';
 import axios from 'axios';
 
-const Game = ()=>{
+class Game extends React.Component {
+
     
+
+    render() {
+        const bookingsHandler = async (e) => {
+            e.preventDefault();
+            console.log('im clicked');
+          
+            const config = {
+              header: {
+                "Content-Type": "application/json",
+              },
+            };
+          
+            try {
+              const { data } = await axios.post(
+                "http://localhost:5000/bookings",
+                config
+              );
+          
+            } catch (error) {
+              
+            }
+          };
     return(
 
         <div className="game-container">
@@ -23,7 +46,9 @@ const Game = ()=>{
                 <div className="image-button">
                     <h2>Every Sunday at 14:00</h2>
                     <h2>Meet up point: Ghent Center at Cafe Renee!</h2>
-                    <Link to ="/participants" className="main-button game">Participate</Link>
+                    <Link to ="/participants"  className="main-button game" onClick={bookingsHandler}>Participate</Link>
+
+                    
                     <Link className="main-button game" onClick={()=> window.open("http://localhost:3000/join")} >ChatRoom</Link>
                 </div>
             </div>
@@ -33,7 +58,7 @@ const Game = ()=>{
         </div>
         )
     }
-
+}
 
 
 export default Game;

@@ -9,6 +9,7 @@ import dotenv from 'dotenv';
 import auth from './routes/auth.js'
 import ano from './routes/private.js'
 
+
 import * as io from 'socket.io';
 import http from 'http';
 import router from './router.js';
@@ -31,12 +32,15 @@ const app = express();
     .then(() => console.log("MongoDB Connected..."))
     .catch(err => console.log(err));*/
 
+ 
+
 connectDB();
   const server = http.createServer(app);
    app.use(express.json())
    app.use(cors());
    app.use('/app/auth', auth)
    app.use('/app/private', ano)
+
   const socketio = new io.Server(server,{
       cors: {
         origin: "http://localhost:3000",

@@ -24,3 +24,24 @@
     font-size:17px;
 }
 
+
+.image-steps-div {
+    position: relative;
+    display: inline-block;
+}
+.image-steps{
+    width:100vw;
+    height:50vw;
+}
+
+.image-steps-div{
+        position: absolute;
+        z-index: 999;
+        margin: 0 auto;
+        left: 0;
+        right: 0;
+        top: 40%; /* Adjust this value to move the positioned div up and down */
+        text-align: center;
+        width: 60%; /* Set the width of the positioned div */
+}
+
