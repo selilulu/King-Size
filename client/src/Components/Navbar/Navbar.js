@@ -12,15 +12,12 @@ import Game from '../Events/Game.js';
 import GameDetails from '../Events/GameDetails.js';
 import Join from '../chatroom/components/join/Join.js';
 import Chat from '../chatroom/components/chat/Chat.js';
-<<<<<<< HEAD
 import Participants from '../Events/Participants.js';
 
 
 
-=======
 import Private from '../Private'
 import ForgotPassword from '../forgotpassword/Forgotpassword';
->>>>>>> 4dee4a5b84ba781dc35257af93cd5d86a686dd68
 import {BrowserRouter as Router,Link} from 'react-router-dom';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import {Dropdown, DropdownButton} from 'react-bootstrap';
@@ -31,53 +28,8 @@ import Resetpassword from '../Resetpassword/Resetpassword'
 import PrivateRoute from '../routing/PrivateRouting'
 const Navbar = ()=>{
 
-<<<<<<< HEAD
- class Navbar extends React.Component { 
-   
 
-    render() {
-        return(
-            <Router>
-            <nav className="NavbarItems">
-                <h1 className="navbar-logo">SPEACTY</h1>
-                <div className='menu-icon'>
-                    <ul className='nav-menu'>
-                    <li>
-                        <Link className='nav-links' to="/Main">Main</Link>
-                    </li>  
-                    <li >
-                        <Link className='nav-links' to="/Login">Login</Link>
-                    </li>    
-                    <li >
-                        <Link className='nav-links' to="/Signup">Signup</Link>
-                    </li>
-                    <li >
-                        <Link className='nav-links' to="/Events">Events</Link>
-                    </li>
-                    <li >
-                        
-                    </li>                        
-                    </ul>
-                </div>
-            </nav>
-            <Route path="/" exact component={Main}/>
-            <Route path="/main" exact component={Main}/>
-            <Route path="/join" exact component={Join} />
-            <Route path="/chat" exact component={Chat} />
-            <Route path="/login" exact component={Login}/>
-            <Route path="/signup" exact component={Signup}/>
-            <Route path="/events" exact component={Events}/>
-            <Route path="/game" exact component={Game}/>
-            <Route path="/gameDetails" exact component={GameDetails}/>
-            <Route path="/participants" exact component={Participants}/>
-        </Router>
-        )
-    }
-=======
-
-       const languages={
-            myArray:['English', 'French','Dutch']
-        }
+       
       
           
         const logoutHandler =()=>{
@@ -109,16 +61,7 @@ const Navbar = ()=>{
                     <Link className='nav-links' onClick= {logoutHandler}>LOGOUT</Link>
                     
                 </li>
-                <li >
-                    <div>
-
-                    <DropdownButton variant='primary' title="Select language" >
-                    {languages.myArray.map(data=>(
-                    <option title={data}>{data}</option>
-                    ))}
-                    </DropdownButton>
-                    </div>
-                </li>                        
+                
                 </ul>
             </div>
         </nav>
@@ -135,7 +78,6 @@ const Navbar = ()=>{
         <Route path="/forgotpassword" exact component={ForgotPassword}/>
         <Route path="/resetpassword/:resetToken" exact component={Resetpassword}/>
 
->>>>>>> 4dee4a5b84ba781dc35257af93cd5d86a686dd68
 
 
 
