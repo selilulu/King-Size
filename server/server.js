@@ -4,16 +4,18 @@
 import express from 'express';
 //import bodyParser from 'body-parser';
 import cors from 'cors';
-import mongoose from 'mongoose';
+import connectDB from './config/db.js';
 import dotenv from 'dotenv';
-import route from './routes/routes.js'
+import auth from './routes/auth.js'
+import ano from './routes/private.js'
+
 import * as io from 'socket.io';
 import http from 'http';
 import router from './router.js';
 const PORT = process.env.PORT || 5000;
 import { addUser, removeUser, getUser, getUsersInRoom }from './users.js'
 const app = express();
-const options = {
+/*const options = {
     useNewUrlParser: true,
     useUnifiedTopology: true,
     useCreateIndex: true,
@@ -27,13 +29,14 @@ const options = {
   };
   mongoose.connect(process.env.DB, options)
     .then(() => console.log("MongoDB Connected..."))
-    .catch(err => console.log(err));
+    .catch(err => console.log(err));*/
 
-
+connectDB();
   const server = http.createServer(app);
    app.use(express.json())
    app.use(cors());
-   app.use('/app', route)
+   app.use('/app/auth', auth)
+   app.use('/app/private', ano)
   const socketio = new io.Server(server,{
       cors: {
         origin: "http://localhost:3000",
@@ -83,3 +86,7 @@ socket.on('sendMessage', (message, callback)=>{
 
 
 server.listen(PORT, () => console.log('server has started on port'+ PORT));
+process.on("unhandledRejection", (err, promise) => {
+  console.log(`logged error: ${err}`);
+  server.close(()=>process.exit(1));
+})

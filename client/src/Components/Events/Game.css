@@ -1,0 +1,58 @@
+.game-container{
+    text-align: center;
+    background-image: linear-gradient(to bottom,  rgb(252, 253, 252), rgba(124, 201, 235, 0.932), rgb(247, 252, 248));
+
+}   
+
+.text-container{
+    font-size:30px;
+    overflow:hidden;
+
+}
+
+.image-button{
+    position: absolute;
+    top: 70%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color:white;
+    background-image: linear-gradient(rgba(43, 120, 165, 0.658), rgba(238, 236, 232, 0.795));
+    height:200px;
+
+}
+
+
+.question{
+    margin:20px;
+    color:rgb(95, 95, 95);
+    font-weight:700;
+    font-size: 33px;
+    letter-spacing: 1px;
+}
+
+.learn-more-div{
+    display: flex;
+    text-align: center;
+    justify-content:center;
+    padding:20px;
+
+}
+
+.learn-more-btn{
+    width: 180px;
+    height:48px;
+    text-align: center;
+    font-size:25px;
+    color:white;
+    background-color: #1C4670;
+
+
+}
+@media all and (max-width:660px){
+    .image-button{
+        height:400px
+    }
+}
+
+
+   

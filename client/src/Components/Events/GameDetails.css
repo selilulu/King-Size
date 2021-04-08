@@ -1,0 +1,26 @@
+.container-gameDetails{
+    display:flex;
+    align-items: center;  
+    background-color: rgb(252, 236, 238);
+    justify-content:space-evenly;
+
+}
+
+.step1-div, .step2-div, .step3-div,.step-reminder-div{
+    background-color: rgba(83, 135, 231, 0.678);
+    width:250px;
+    height:250px;
+    margin:40px auto;
+    text-align:center;
+    border-radius: 5px;
+    border: 0px solid;
+    padding: 45px;
+    box-shadow: 5px 10px #88888883;
+  
+}
+
+.step1,.step2,.step3,.step4,.step5{
+    font-weight: 700;
+    font-size:17px;
+}
+

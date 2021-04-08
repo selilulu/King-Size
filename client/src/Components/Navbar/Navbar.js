@@ -9,8 +9,8 @@ import Main from '../Main/Main';
 import Login from '../Login/Login.js';
 import Signup from '../Signup/Signup.js';
 import Events from '../Events/Events';
-// import Game from '../Events/Game.js';
-// import GameDetails from '../Events/GameDetails.js';
+import Game from '../Events/Game.js';
+import GameDetails from '../Events/GameDetails.js';
 import Join from '../chatroom/components/join/Join.js';
 import Chat from '../chatroom/components/chat/Chat.js';
 
@@ -103,7 +103,7 @@ function Navbar() {
       </nav>
     
  
-    {/* <Route  path="/" component={Main} /> */}
+    {/* <Route  path="/" component={Main} />  */}
 
     <Route path="/main" exact component={Main}/>
     <Route path="/join" exact component={Join} />
@@ -111,9 +111,9 @@ function Navbar() {
     <Route path="/Login" exact component={Login}/>
     <Route path="/Signup" exact component={Signup}/>
     <Route path="/events" exact component={Events}/> 
-    {/* <Route path="/game" exact component={Game}/> */}
-    {/* <Route path="/gameDetails" exact component={GameDetails}/>
-    <Route path="/forgotpassword" exact component={ForgotPassword}/> */}
+    <Route path="/game" exact component={Game}/> 
+    <Route path="/gameDetails" exact component={GameDetails}/>
+    {/* <Route path="/forgotpassword" exact component={ForgotPassword}/>  */}
     {/* <Route path="/resetpassword/:resetToken" exact component={Resetpassword}/> */}
 </Router>
   );

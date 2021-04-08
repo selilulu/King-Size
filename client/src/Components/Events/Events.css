@@ -1,8 +1,11 @@
+
+
 .card-deck{
     margin-top :5rem;
     display:grid;
     grid-template-columns: 20% 20% 20%;
-    justify-content: space-evenly;    
+    justify-content: space-evenly; 
+ 
 }
 
 .card-container{
@@ -56,9 +59,10 @@ h3,p{
     justify-content: center;
 }
 
-.btn button{
+.link-btn{
+    text-decoration: none!important;
     padding:0.5rem;
-    background-color: white;
+    background-color:#1C4670;
     border:none;
     transition: 0.2s;
     margin-bottom: 0.5rem;
@@ -66,9 +70,9 @@ h3,p{
     
 }
 
-.btn button:hover{
+.link-btn:hover{
     background: rgba(27, 156, 252, 0.1);
-    color:lightblue;
+    color:1DC690;
     transform:scale(1.1);
 }
 
@@ -78,6 +82,9 @@ a{
     text-decoration: none;
 }
 
+/* .jenga-card{
+    background-color:rgba(34, 199, 97, 0.534) ;
+} */
 @media only screen and (max-width: 1022px) {
     .card-deck{
         margin-top :5rem;
@@ -89,3 +96,4 @@ a{
         width: 100%;
     }
 }
+

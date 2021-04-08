@@ -27,33 +27,26 @@ function Events() {
                    <p> In this online language game, learn with others news words and other expressions meanwhile having fun. </p>
                 </div>
                 <div className='btn'>
-                    <button>
-                        <a>
-                            View more
-                        </a>
-                    </button>
+                <Link className="link-btn" to='/onlinegame'>Learn More</Link>
+
 
                 </div>
             </div>
        </div>
 
-    <div className='card-container'>
-    <div className='image-conatiner'>
-        <img className='eventImg' src='/images/boardgame.png' alt=''></img>
+    <div className='card-container jenga-card'>
+    <div className='image-container'>
+        <img className='eventImg' src='/images/jenga.jpg' alt=''></img>
     </div>
-    <div className='card-content'>
+    <div className='card-content '>
         <div className='card-title'>
-        <h3> Play a boardgame learning French</h3>
-        </div>
+        <h3> Meet & Play a game with other learners</h3>
+        </div>  
         <div className='class-body'>
-        <p> TIme to relax and play a boardgame toegether but attention, only French allowed! </p>
+        <p> Time to have an outdoor activity,play any game you want,but speak only French! </p>
         </div>
         <div className='btn'>
-            <button>
-                <a>
-                    View more
-                </a>
-            </button>
+        <Link className="link-btn" to='/Game'>Learn More</Link>
 
         </div>
     </div>
@@ -73,12 +66,12 @@ function Events() {
                 
       
       
+              
+                
                 <div className='btn'>
-                    <button onClick={()=> window.open("http://localhost:3000/join")}>
-                    Join
-                    </button>
-
+                <Link className="link-btn" to='/join'>Learn More</Link>
                 </div>
+              
                    
                
             </div>

@@ -1,0 +1,10 @@
+PUT   http://localhost:5000/app/auth/resetpassword/25b6ee4dbf31395cf1790ac7552eb95ea3048ca6 HTTP/1.1
+Content-Type: application/json
+
+
+
+{
+
+"password":"123456"
+
+}
