@@ -1,4 +1,4 @@
-import React from 'react';
+import {React , useState} from 'react';
 import './Game.css';
 import ImageSlider from './ImageSlider'
 import {SliderData} from './SliderData.js'
@@ -6,12 +6,10 @@ import {BrowserRouter as Router,Link, Switch} from 'react-router-dom';
 import Button from 'react-bootstrap/Button';
 import Join from '../chatroom/components/join/Join';
 import Chat from '../chatroom/components/chat/Chat';
+import axios from 'axios';
 
-
-class Game extends React.Component {
-
-    render() {
-
+const Game = ()=>{
+    
     return(
 
         <div className="game-container">
@@ -35,7 +33,7 @@ class Game extends React.Component {
         </div>
         )
     }
-}
+
 
 
 export default Game;

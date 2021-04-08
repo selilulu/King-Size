@@ -2,6 +2,8 @@ import mongoose from 'mongoose';
 import bcrypt from 'bcrypt';
 import jwt from 'jsonwebtoken';
 import crypto from 'crypto'; 
+
+
 const userSchema = new mongoose.Schema({
 
 FirstName:{
@@ -33,7 +35,7 @@ password: {
 date:{
     type:Date,
     default:new Date()
-}
+},
 
 });
 
@@ -65,4 +67,5 @@ this.resetPasswordExpire = Date.now() + (60*1000);
  }
 
 const User =mongoose.model("User",userSchema);
-export default User;
+
+export default User ;

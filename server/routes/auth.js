@@ -1,7 +1,7 @@
 import express, { request, response, Router} from 'express';
 
 const route = express.Router();
-import {register, login, forgotpassword, resetpassword} from '../controllers/auth.js'
+import {register, login, forgotpassword, resetpassword, userName} from '../controllers/auth.js'
 /*import bcrypt from 'bcrypt'
 //router.get('/Signup', getPosts);
 route.post("/Signup", async (request, response) => {
@@ -28,5 +28,6 @@ route.route("/Signup").post(register);
 route.route("/login").post(login);
 route.route("/forgotpassword").post(forgotpassword);
 route.route("/resetpassword/:resetToken").put(resetpassword);
+route.route("/user/:id").get(userName);
 
 export default route;

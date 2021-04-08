@@ -14,7 +14,7 @@ import Chat from '../chatroom/components/chat/Chat.js';
 import Participants from '../Events/Participants.js';
 
 
-
+import Game from '../Events/Game'
 import Private from '../Private'
 import ForgotPassword from '../forgotpassword/Forgotpassword';
 import {BrowserRouter as Router,Link} from 'react-router-dom';
@@ -30,7 +30,6 @@ import PrivateRoute from '../routing/PrivateRouting'
 const Navbar = ()=>{
 
 
-
        const languages={
             myArray:['English', 'French','Dutch']
         }
@@ -44,40 +43,41 @@ const Navbar = ()=>{
      return (
      
      <Router>
+        
         <nav className="NavbarItems">
             <h1 className="navbar-logo">SPEACTY</h1>
             <div className='menu-icon'>
                 <ul className='nav-menu'>
+             
+              
                 <li>
                     <Link className='nav-links' to="/Main">Main</Link>
-                </li>  
+                </li> 
                 <li >
                     <Link className='nav-links' to="/Login">Login</Link>
                 </li>    
                 <li >
                     <Link className='nav-links' to="/Signup">Signup</Link>
                 </li>
-                <li >
+
+                      
+                        <li>
+                            <Link className='nav-links' to="/Main">Main</Link>
+                        </li> 
+                <li>
                     <Link className='nav-links' to="/Events">Events</Link>
                     
                 </li>
-                <li >
+
+                <li>
                     <Link className='nav-links' onClick= {logoutHandler}>LOGOUT</Link>
                     
                 </li>
-                <li >
-                    <div>
-
-                    <DropdownButton variant='primary' title="Select language" >
-                    {languages.myArray.map(data=>(
-                    <option title={data}>{data}</option>
-                    ))}
-                    </DropdownButton>
-                    </div>
-                </li>                        
                 </ul>
-            </div>
-        </nav>
+                </div>
+                </nav>                        
+            
+    
         <PrivateRoute exact path="/" component={Private} />
 
         <Route path="/main" exact component={Main}/>
@@ -93,6 +93,7 @@ const Navbar = ()=>{
         <Route path="/onlinegame" exact component={GameIndex}/>
         <Route path="/gamefr" exact component={GameFr}/>
         <Route path="/gamede" exact component={GameDe}/>
+        <Route path="/game" exact component={Game}/>
 
 
 
