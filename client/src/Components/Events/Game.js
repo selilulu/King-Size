@@ -50,9 +50,9 @@ class Game extends React.Component {
                 </div>
             </div>
 
-            <div className="learn-more-div">
+            {/* <div className="learn-more-div">
                 <Button className="learn-more-btn" href="/GameDetails" variant="warning">Learn More</Button> 
-            </div>
+            </div> */}
         </div>
         )
     }

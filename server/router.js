@@ -1,6 +1,6 @@
 import express from 'express';
 import {events,createEvents} from './controllers/events.js';
-import {showAllBookings,createBookings} from './controllers/bookings.js';
+import {showAllBookings,createBookings} from './controllers/Bookings.js';
 const router = express.Router();
 
 router.get("/", (req, res) => {

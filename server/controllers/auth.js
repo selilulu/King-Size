@@ -2,14 +2,15 @@ import User from '../models/User.js'
 import sendEmail from '../utils/sendEmail.js';
 import crypto from 'crypto';
 const register = async (req, res, next) =>{
-    const {FirstName, LastName, Email, password} = req.body
+    const {FirstName, LastName, Email, password, GoingEvent} = req.body
 
     try{
         const user = await User.create({
             FirstName,
              LastName,
               Email,
-            password 
+            password,
+          
         });
        sendToken(user, 201, res)
     }
@@ -111,8 +112,18 @@ const sendToken = (user,statusCode, res)=>{
     const token = user.getSignedToken();
     res.status(statusCode).json({success:true, token})
 };
+const userName = (req, res, next) =>{
 
-export {register, login, forgotpassword,resetpassword};
+ User.findByIdDemo.find({"_id":FirstName})
+  .then (doc  =>{
+
+      if(!doc) {return res.status(404).end();}
+      return res.status(200).json(doc);
+  } )
+  .catch(err  => next(err));
+};
+
+export {register, login, forgotpassword,resetpassword,userName};
 
 
     

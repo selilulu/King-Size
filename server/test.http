@@ -1,12 +1,4 @@
 
-POST  http://localhost:5000/app/auth/forgotpassword HTTP/1.1
+GET  http://localhost:5000/app/auth/user/6066c4eeec4a1d247cd106bc HTTP/1.1
 Content-Type: application/json
 
-{
-
-
-"Email":"khiatihouda@gmail.com"
-
-
-
-}

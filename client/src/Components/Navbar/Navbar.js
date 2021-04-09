@@ -1,129 +1,153 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Button } from './Button';
-import { Link, BrowserRouter as  Router, Route, } from 'react-router-dom';
+import { Link, BrowserRouter as  Router, Route,Redirect } from 'react-router-dom';
 import './Navbar.css';
-import Dropdown from './Dropdown.js';
+import Dropdown from './Dropdown';
+import './Button.css';
 
 /*import  Route  from 'react-router-dom/Route.js';*/
 import Main from '../Main/Main';
 import Login from '../Login/Login.js';
 import Signup from '../signup/Signup.js';
 import Events from '../Events/Events';
-import Game from '../Events/Game.js';
 import GameDetails from '../Events/GameDetails.js';
-import Resetpassword from '../Resetpassword/Resetpassword.js';
-import Forgotpassword from '../forgotpassword/Forgotpassword.js';
+import Game from '../Events/Game.js';
 import Join from '../chatroom/components/join/Join.js';
 import Chat from '../chatroom/components/chat/Chat.js';
-import GameIndex from '../game/GameIndex.js';
-import GameFr from '../game/GameFr.js';
-import GameDe from '../game/GameDe.js';
+import Participants from '../Events/Participants.js';
+import Private from '../Private'
+import ForgotPassword from '../forgotpassword/Forgotpassword';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import Resetpassword from '../Resetpassword/Resetpassword.js'
+import GameIndex from '../game/GameIndex'
+import GameFr from '../game/GameFr';
+import GameDe from '../game/GameDe';
 
+
+import PrivateRoute from '../routing/PrivateRouting'
 function Navbar() {
-  const [click, setClick] = useState(false);
-  const [dropdown, setDropdown] = useState(false);
+/*const  isLoggedIn = localStorage.getItem('authToken');*/
+ 
 
-  const handleClick = () => setClick(!click);
-  const closeMobileMenu = () => setClick(false);
 
-  const onMouseEnter = () => {
-    if (window.innerWidth < 1085) {
-      setDropdown(false);
-    } else {
-      setDropdown(true);
+  const isLoggedIn= localStorage.getItem('authToken');
+
+  
+
+
+
+
+    const logoutHandler =()=>{
+      window.location.href = '/Login';
+      localStorage.removeItem("authToken");
+
     }
-  };
-
-  const onMouseLeave = () => {
-    if (window.innerWidth < 1085) {
-      setDropdown(false);
-    } else {
-      setDropdown(false);
-    }
-  };
-
-  return (
-      <Router>
+    const [click, setClick] = useState(false);
+    const [dropdown, setDropdown] = useState(false);
+  
+    const handleClick = () => setClick(!click);
+    const closeMobileMenu = () => setClick(false);
+  
+    const onMouseEnter = () => {
+      if (window.innerWidth < 1085) {
+        setDropdown(false);
+      } else {
+        setDropdown(true);
+      }
+    };
+  
+    const onMouseLeave = () => {
+      if (window.innerWidth < 1085) {
+        setDropdown(false);
+      } else {
+        setDropdown(false);
+      }
+    };
+  
+    return (
+        <Router>
+      
+        <nav className='navbar'>
+          <Link to='/' className='navbar-logo' onClick={closeMobileMenu}>
+            SPEACTY
+            <i class='fab fa-firstdraft' />
+          </Link>
+          <div className='menu-icon' onClick={handleClick}>
+            <i className={click ? 'fas fa-times' : 'fas fa-bars'} />
+          </div>
+          <ul className={click ? 'nav-menu active' : 'nav-menu'}>
+          {isLoggedIn && (
+            <li className='nav-item'>
+              <Link to='/main' className='nav-links' onClick={closeMobileMenu}>
+                Main
+              </Link>
+            </li>)}
+            {isLoggedIn && (
+            <li
+              className='nav-item'
+              onMouseEnter={onMouseEnter}
+              onMouseLeave={onMouseLeave}
+            >
+              <Link
+                to='/events'
+                className='nav-links'
+                onClick={closeMobileMenu}
+              >
+                Events <i className='fas fa-caret-down' />
+              </Link>
+              {dropdown && <Dropdown />}
+            </li>)}
+            {!isLoggedIn && (
+            <li className='nav-item'>
+              <Link
+                to='/Login'
+                className='nav-links'
+                onClick={closeMobileMenu}
+              >
+                Log in
+              </Link>
+            </li>
+            )}
+            {isLoggedIn && (
+            <li className='nav-item'>
+              <Link
+               
+                className='nav-links'
+                onClick={logoutHandler}
+              >
+                Log out
+              </Link>
+            </li>
+            )}
+         
+          </ul>
+          {!isLoggedIn && (
+          <Link to='Signup'>
+      <button className='btn1'>Sign Up</button>
+    </Link>
+          )}
+        </nav>
+   
     
-      <nav className='navbar'>
-        <Link to='/Main' className='navbar-logo' onClick={closeMobileMenu} >
-        <img src="./images/logo_size_invert.jpg" alt="" className="img-responsive"/>
+        <Route exact path="/" component={Main} />  
 
-        </Link>
+      <Route path="/main" exact component={Main}/>
+      <Route path="/join" exact component={Join} />
+      <Route path="/chat" exact component={Chat} />
+      <Route path="/login" exact component={Login}/>
+      <Route path="/Signup" exact component={Signup}/>
+      <Route path="/events" exact component={Events}/> 
+      <Route path="/game" exact component={Game}/> 
+      <Route path="/gameDetails" exact component={GameDetails}/>
+      <Route path="/forgotpassword" exact component={ForgotPassword}/>  
+       <Route path="/gamede" exact component={GameDe}/> 
+       <Route path="/gamefr" exact component={GameFr}/> 
+       <Route path="/gameindex" exact component={GameIndex}/> 
+       <Route path="/resetpassword/:resetToken" exact component={Resetpassword}/> 
 
-        <div className='menu-icon' onClick={handleClick}>
-          <i className={click ? 'fas fa-times' : 'fas fa-bars'} />
-        </div>
-        <ul className={click ? 'nav-menu active' : 'nav-menu'}>
-          <li className='nav-item'>
-            <Link to='/main' className='nav-links' onClick={closeMobileMenu}>
-              Main
-            </Link>
-          </li>
-          <li
-            className='nav-item'
-            onMouseEnter={onMouseEnter}
-            onMouseLeave={onMouseLeave}
-          >
-            <Link
-              to='/events'
-              className='nav-links'
-              onClick={closeMobileMenu}
-            >
-              Events <i className='fas fa-caret-down' />
-            </Link>
-            {dropdown && <Dropdown />}
-          </li>
-          <li className='nav-item'>
-            <Link
-              to='/Login'
-              className='nav-links'
-              onClick={closeMobileMenu}
-            >
-              Log in
-            </Link>
-          </li>
-          <li className='nav-item'>
-            <Link
-              to='/logout'
-              className='nav-links'
-              onClick={closeMobileMenu}
-            >
-              Log out
-            </Link>
-          </li>
-          <li>
-            <Link
-              to='/sign-up'
-              className='nav-links-mobile'
-              onClick={closeMobileMenu}
-            >
-              Sign Up
-            </Link>
-            
-          </li>
-          
-        </ul>
-        <Button />
-        
-      </nav>
-    
 
-    <Route path="/main" exact component={Main}/>
-    <Route path="/join" exact component={Join} />
-    <Route path="/chat" exact component={Chat} />
-    <Route path="/Login" exact component={Login}/>
-    <Route path="/Signup" exact component={Signup}/>
-    <Route path="/events" exact component={Events}/> 
-    <Route path="/game" exact component={Game}/> 
-    <Route path="/gameDetails" exact component={GameDetails}/>
-    <Route path="/forgotpassword" exact component={Forgotpassword}/>  
-    <Route path="/resetpassword/:resetToken" exact component={Resetpassword}/>
-    <Route path="/gamede" exact component={GameDe}/> 
-    <Route path="/gamefr" exact component={GameFr}/> 
-    <Route path="/gameindex" exact component={GameIndex}/> 
-    </Router>
-  );
-}
-
-export default Navbar;
+  </Router>
+    );
+  }
+  
+  export default Navbar;
