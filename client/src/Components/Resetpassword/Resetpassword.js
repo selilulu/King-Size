@@ -21,7 +21,7 @@ const Resetpassword = ({ history, match }) => {
     
     try {
       const { data } = await axios.put(
-        `http://localhost:5000/app/auth/resetpassword/${match.params.resetToken}`,
+        `https://speacty.herokuapp.com/${match.params.resetToken}`,
         {
           password,
         },

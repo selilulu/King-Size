@@ -1,30 +1,35 @@
 .game-container{
     text-align: center;
-    background-image: linear-gradient(to bottom,  rgb(252, 253, 252), rgba(124, 201, 235, 0.932), rgb(247, 252, 248));
+    background-color:rgba(228, 235, 235, 0.452);
+
 
 }   
 
 .text-container{
-    font-size:30px;
     overflow:hidden;
 
 }
+.image-button h2{
+    font-size:calc(4px + 2vw);
+}
+
 
 .image-button{
     position: absolute;
-    top: 70%;
+    top: 60%;
     left: 50%;
     transform: translate(-50%, -50%);
     color:white;
     background-image: linear-gradient(rgba(43, 120, 165, 0.658), rgba(238, 236, 232, 0.795));
-    height:200px;
+    height:calc(10px+ 10vw);
+    width:calc(10px+ 10vw);
 
 }
 
 
 .question{
     margin:20px;
-    color:rgb(95, 95, 95);
+    color:#1C4670;
     font-weight:700;
     font-size: 33px;
     letter-spacing: 1px;
@@ -42,16 +47,20 @@
     width: 180px;
     height:48px;
     text-align: center;
-    font-size:25px;
-    color:white;
-    background-color: #1C4670;
+    font-size:20px;
+    font-weight:800;
+    color:rgb(24, 23, 23);
+    background-color:rgba(3, 3, 3, 0.788);
+    ;
 
 
 }
-@media all and (max-width:660px){
+@media all and (max-width:400px){
     .image-button{
-        height:400px
+        top: 65%;
+        left: 50%;
     }
+
 }
 
 

@@ -7,7 +7,7 @@
 }
 
 .world-image{
-    height:calc(350px + 15vw);
+    height:calc(350px + 20vw);
     width:100vw;
 
 
@@ -31,16 +31,7 @@
 
 
 .main-divtext{
-    /* width: auto;
-    height: auto;  
-    font-size:4em;
-    color:#1C4670;
-    font-weight:500;
-    line-height:70px;
-    position:absolute;
-    top:200px;
-    left:100px;
-    opacity: 0.8;   */
+
     color:#1C4670;
     font-size:55px;
     font-weight: 800;
@@ -153,7 +144,7 @@ strong{
 
 @media all and (max-width:660px){
     .main-divtext{
-        color:#1C4670;
+        color:#122538;
         font-size:15px;
         font-weight: 800;
         letter-spacing:2px;

@@ -15,7 +15,7 @@ const Chat = ({location}) =>{
     const [messages, setMessages] = useState([]);   
     
     
-    const ENDPOINT = 'http://localhost:5000'
+    const ENDPOINT = 'https://speacty.herokuapp.com/'
 
     useEffect(()=>{
         const {name, room} = queryString.parse(location.search);
