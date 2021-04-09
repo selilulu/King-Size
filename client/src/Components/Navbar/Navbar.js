@@ -68,10 +68,10 @@ function Navbar() {
         <Router>
       
         <nav className='navbar'>
-          <Link to='/' className='navbar-logo' onClick={closeMobileMenu}>
-            SPEACTY
-            <i class='fab fa-firstdraft' />
-          </Link>
+        <Link to='/Main' className='navbar-logo' onClick={closeMobileMenu} >
+        <img src="./images/logo_size_invert.jpg" alt="" className="img-responsive"/>
+
+        </Link>
           <div className='menu-icon' onClick={handleClick}>
             <i className={click ? 'fas fa-times' : 'fas fa-bars'} />
           </div>
