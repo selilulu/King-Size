@@ -29,7 +29,7 @@ export default function Signup({history}) {
     
     try {
       const { data } = await axios.post(
-        "https://speacty.herokuapp.com/",
+        "https://speacty.herokuapp.com/app/auth/Signup",
         {
           FirstName,
           LastName,

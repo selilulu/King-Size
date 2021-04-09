@@ -27,7 +27,7 @@ const loginHandler = async (e) => {
 
   try {
     const { data } = await axios.post(
-      "https://speacty.herokuapp.com/",
+      "https://speacty.herokuapp.com/app/auth/login",
       { Email, password },
       config
     );
