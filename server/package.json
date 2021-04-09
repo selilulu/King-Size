@@ -6,7 +6,7 @@
   "type": "module",
   "proxy": "http://localhost:5000",
   "scripts": {
-    "start": "nodemon server.js"
+    "start": "node index.js"
   },
   "repository": {
     "type": "git",

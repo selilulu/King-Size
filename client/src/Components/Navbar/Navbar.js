@@ -1,8 +1,9 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Button } from './Button';
 import { Link, BrowserRouter as  Router, Route,Redirect } from 'react-router-dom';
 import './Navbar.css';
 import Dropdown from './Dropdown';
+import './Button.css';
 
 /*import  Route  from 'react-router-dom/Route.js';*/
 import Main from '../Main/Main';
@@ -25,10 +26,22 @@ import GameDe from '../game/GameDe';
 
 import PrivateRoute from '../routing/PrivateRouting'
 function Navbar() {
+/*const  isLoggedIn = localStorage.getItem('authToken');*/
+ 
+
+
+  const isLoggedIn= localStorage.getItem('authToken');
+
+  
+
+
+
+
     const logoutHandler =()=>{
-        localStorage.removeItem("authToken");
-        <Link to='/Signup'></Link>
-        }
+      window.location.href = '/Login';
+      localStorage.removeItem("authToken");
+
+    }
     const [click, setClick] = useState(false);
     const [dropdown, setDropdown] = useState(false);
   
@@ -63,11 +76,13 @@ function Navbar() {
             <i className={click ? 'fas fa-times' : 'fas fa-bars'} />
           </div>
           <ul className={click ? 'nav-menu active' : 'nav-menu'}>
+          {isLoggedIn && (
             <li className='nav-item'>
               <Link to='/main' className='nav-links' onClick={closeMobileMenu}>
                 Main
               </Link>
-            </li>
+            </li>)}
+            {isLoggedIn && (
             <li
               className='nav-item'
               onMouseEnter={onMouseEnter}
@@ -81,7 +96,8 @@ function Navbar() {
                 Events <i className='fas fa-caret-down' />
               </Link>
               {dropdown && <Dropdown />}
-            </li>
+            </li>)}
+            {!isLoggedIn && (
             <li className='nav-item'>
               <Link
                 to='/Login'
@@ -91,6 +107,8 @@ function Navbar() {
                 Log in
               </Link>
             </li>
+            )}
+            {isLoggedIn && (
             <li className='nav-item'>
               <Link
                
@@ -100,23 +118,17 @@ function Navbar() {
                 Log out
               </Link>
             </li>
-            <li>
-              <Link
-                to='/Signup'
-                className='nav-links-mobile'
-                onClick={closeMobileMenu}
-              >
-                Sign Up
-              </Link>
-              
-            </li>
-            
+            )}
+         
           </ul>
-          <Button />
-          
+          {!isLoggedIn && (
+          <Link to='Signup'>
+      <button className='btn1'>Sign Up</button>
+    </Link>
+          )}
         </nav>
-      
    
+    
         <Route exact path="/" component={Main} />  
 
       <Route path="/main" exact component={Main}/>
