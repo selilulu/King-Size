@@ -27,7 +27,7 @@ function Events() {
                    <p> In this online language game, learn with others news words and other expressions meanwhile having fun. </p>
                 </div>
                 <div className='btn'>
-                <Link className="link-btn" to='/onlinegame'>Learn More</Link>
+                <Link className="link-btn" to='/gameindex'>View More</Link>
 
 
                 </div>
@@ -46,7 +46,7 @@ function Events() {
         <p> Time to have an outdoor activity,play any game you want,but speak only French! </p>
         </div>
         <div className='btn'>
-        <Link className="link-btn" to='/Game'>Learn More</Link>
+        <Link className="link-btn" to='/Game'>View More</Link>
 
         </div>
     </div>
@@ -69,7 +69,7 @@ function Events() {
               
                 
                 <div className='btn'>
-                <Link className="link-btn" to='/join'>Learn More</Link>
+                <Link className="link-btn" to='/join'>View More</Link>
                 </div>
               
                    

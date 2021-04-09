@@ -1,47 +1,20 @@
-.container-gameDetails{
-    display:flex;
-    align-items: center;  
-    background-color: rgb(252, 236, 238);
-    justify-content:space-evenly;
+/* <div className="content-wrapper">
+<div className="text-wrapper">
+    <p className="step1">STEP 1 : Choose your language group to join    </p>
+    <p className="step2">STEP 2 : Decide with your group which game to play before meet up & bring it with you</p>
+    <p className="step3">STEP 3 : Enjoy the company & try speaking only in English</p>
+    <p className="step4">REMINDER: Let other joiners know in case you can't join.</p>
+    <p className="step5">REMINDER: Event goes only if the minimum participant reaches to 2.</p>
+</div>
+</div> */
 
+.content-wrapper{
+display: flex;
+justify-content: center;
+margin:10vw auto;
+background-color: aliceblue;
 }
 
-.step1-div, .step2-div, .step3-div,.step-reminder-div{
-    background-color: rgba(83, 135, 231, 0.678);
-    width:250px;
-    height:250px;
-    margin:40px auto;
-    text-align:center;
-    border-radius: 5px;
-    border: 0px solid;
-    padding: 45px;
-    box-shadow: 5px 10px #88888883;
-  
+.text-wrapper{
+    font-size:2vw;
 }
-
-.step1,.step2,.step3,.step4,.step5{
-    font-weight: 700;
-    font-size:17px;
-}
-
-
-.image-steps-div {
-    position: relative;
-    display: inline-block;
-}
-.image-steps{
-    width:100vw;
-    height:50vw;
-}
-
-.image-steps-div{
-        position: absolute;
-        z-index: 999;
-        margin: 0 auto;
-        left: 0;
-        right: 0;
-        top: 40%; /* Adjust this value to move the positioned div up and down */
-        text-align: center;
-        width: 60%; /* Set the width of the positioned div */
-}
-
