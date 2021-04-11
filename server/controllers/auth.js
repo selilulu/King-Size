@@ -55,10 +55,10 @@ const forgotpassword = async (req, res, next) =>{
 
        await user.save()
 
-       const resetUrl = `http://localhost:3000/resetpassword/${resetToken}`;
+       const resetUrl = `https://6072b1a923668c33af33c6da--silly-hoover-09f71f.netlify.app/resetpassword/${resetToken}`;
        const message = `
       <h1>You have requested a password reset</h1>
-      <p>Please make a put request to the following link:</p>
+      <p>Please follow the link to change your password:</p>
       <a href=${resetUrl} clicktracking=off>${resetUrl}</a>
     `;
        try{

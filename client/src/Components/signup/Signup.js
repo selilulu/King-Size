@@ -52,7 +52,9 @@ export default function Signup({history}) {
   
 
   return (
+
     <div className="Signup">
+        {error && <span className="error-message">{error}</span>}
 
 <Form onSubmit={handleSubmit}>
         <Form.Group size="lg" controlId="FirstName">

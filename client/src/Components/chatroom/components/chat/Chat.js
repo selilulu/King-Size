@@ -6,7 +6,18 @@ import InfoBar from '../infobar/Infobar';
 import Input from '../input/Input';
 
 import './chat.css';
-let socket;
+let socket = io("https://speacty.herokuapp.com", {
+  withCredentials: true,
+ 
+    transportOptions: {
+      polling: {
+        extraHeaders: {
+          "my-custom-header": "abcd"
+        }
+      }
+    }
+  
+});;
 const Chat = ({location}) =>{
     const [name, setName] = useState('');
     const [room, setRoom] = useState('');
@@ -15,11 +26,12 @@ const Chat = ({location}) =>{
     const [messages, setMessages] = useState([]);   
     
     
-    const ENDPOINT = 'https://speacty.herokuapp.com/'
+    const ENDPOINT = 'https://speacty.herokuapp.com'
 
     useEffect(()=>{
         const {name, room} = queryString.parse(location.search);
         socket = io.connect(ENDPOINT)
+        
        setName(name);
        setRoom(room)
        socket.emit('join', {name, room},() => {

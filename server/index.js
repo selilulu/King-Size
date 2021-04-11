@@ -35,16 +35,33 @@ const app = express();
 connectDB();
   const server = http.createServer(app);
    app.use(express.json())
-   app.use(cors());
+
+
+   app.use(cors())
+
    app.use('/app/auth', auth)
    app.use('/app/private', ano)
-
+   
+ 
   const socketio = new io.Server(server,{
-      cors: {
-        origin: "http://localhost:3000",
-        credentials: true
-      }
-    });
+      cors:{
+        origins: ["*"],
+    
+    handlePreflightRequest: (req, res) => {
+      res.writeHead(200, {
+        "Access-Control-Allow-Origin": "*",
+        "Access-Control-Allow-Methods": "GET,POST",
+        "Access-Control-Allow-Headers": "my-custom-header",
+        "Access-Control-Allow-Credentials": true
+      });
+      res.end();
+    }}
+  });
+
+  
+ 
+   
+ 
   
   app.use(router);
 
@@ -88,7 +105,3 @@ socket.on('sendMessage', (message, callback)=>{
 
 
 server.listen(PORT, () => console.log('server has started on port'+ PORT));
-process.on("unhandledRejection", (err, promise) => {
-  console.log(`logged error: ${err}`);
-  server.close(()=>process.exit(1));
-})
