@@ -52,8 +52,8 @@ userSchema.methods.matchPasswords = async function(password){
     return await bcrypt.compare(password, this.password);
 }
 userSchema.methods.getSignedToken =  function(){
-   return jwt.sign({id:this._id}, process.env.JWT_SECRET,{
-       expiresIn: process.env.JWT_EXPIRE
+   return jwt.sign({id:this._id}, process.env.JWT_SECRET || "d946f6ba67f95bc7d8df1013e83fbe57476b6fb239b76d4273d68ddb5834f41d5b7576",{
+       expiresIn: process.env.JWT_EXPIRE || '10min'
    })
 }
 userSchema.methods.getResetPasswordToken=  function(){

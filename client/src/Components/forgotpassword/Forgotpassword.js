@@ -18,7 +18,7 @@ const Forgotpassword= () => {
 
     try {
       const { data } = await axios.post(
-        "http://localhost:5000/app/auth/forgotpassword",
+        "https://speacty.herokuapp.com/app/auth/forgotpassword",
         { Email },
         config
       );

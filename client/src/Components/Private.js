@@ -15,7 +15,7 @@ const PrivateScreen = ({history}) => {
       };
 
       try {
-        const { data } = await axios.get("http://localhost:5000/app/private", config);
+        const { data } = await axios.get("https://speacty.herokuapp.com/", config);
         setPrivateData(data.data);
       } catch (error) {
         localStorage.removeItem("authToken");

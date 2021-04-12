@@ -29,7 +29,7 @@ export default function Signup({history}) {
     
     try {
       const { data } = await axios.post(
-        "http://localhost:5000/app/auth/Signup",
+        "https://speacty.herokuapp.com/app/auth/Signup",
         {
           FirstName,
           LastName,
@@ -52,7 +52,9 @@ export default function Signup({history}) {
   
 
   return (
+
     <div className="Signup">
+        {error && <span className="error-message">{error}</span>}
 
 <Form onSubmit={handleSubmit}>
         <Form.Group size="lg" controlId="FirstName">

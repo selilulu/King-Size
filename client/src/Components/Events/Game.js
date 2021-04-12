@@ -13,26 +13,7 @@ class Game extends React.Component {
     
 
     render() {
-        const bookingsHandler = async (e) => {
-            e.preventDefault();
-            console.log('im clicked');
-          
-            const config = {
-              header: {
-                "Content-Type": "application/json",
-              },
-            };
-          
-            try {
-              const { data } = await axios.post(
-                "http://localhost:5000/bookings",
-                config
-              );
-          
-            } catch (error) {
-              
-            }
-          };
+        //  
     return(
 
         <div className="game-container">
@@ -45,7 +26,7 @@ class Game extends React.Component {
                 <div className="image-button">
                     <h2>Every Sunday at 14:00</h2>
                     <h2>Meet up point: Ghent Center at Cafe Renee!</h2>
-                    <Link to ="/participants"  className="main-button game-button" onClick={bookingsHandler}>Participate</Link>
+                    <Link to ="/participants"  className="main-button game-button" >Participate</Link>
                     <Link className="main-button game-button" onClick={()=> window.open("http://localhost:3000/join")} >ChatRoom</Link>
                 </div>
             </div>

@@ -38,9 +38,9 @@ function Navbar() {
 
 
     const logoutHandler =()=>{
-      window.location.href = '/Login';
+     
       localStorage.removeItem("authToken");
-
+      window.location.href = '/Login';
     }
     const [click, setClick] = useState(false);
     const [dropdown, setDropdown] = useState(false);
@@ -76,13 +76,13 @@ function Navbar() {
             <i className={click ? 'fas fa-times' : 'fas fa-bars'} />
           </div>
           <ul className={click ? 'nav-menu active' : 'nav-menu'}>
-          {isLoggedIn && (
+         
             <li className='nav-item'>
               <Link to='/main' className='nav-links' onClick={closeMobileMenu}>
                 Main
               </Link>
-            </li>)}
-            {isLoggedIn && (
+            </li>
+           
             <li
               className='nav-item'
               onMouseEnter={onMouseEnter}
@@ -96,7 +96,7 @@ function Navbar() {
                 Events <i className='fas fa-caret-down' />
               </Link>
               {dropdown && <Dropdown />}
-            </li>)}
+            </li>
             {!isLoggedIn && (
             <li className='nav-item'>
               <Link
@@ -138,6 +138,8 @@ function Navbar() {
       <Route path="/Signup" exact component={Signup}/>
       <Route path="/events" exact component={Events}/> 
       <Route path="/game" exact component={Game}/> 
+      <Route path="/participants" exact component={Participants}/> 
+
       <Route path="/gameDetails" exact component={GameDetails}/>
       <Route path="/forgotpassword" exact component={ForgotPassword}/>  
        <Route path="/gamede" exact component={GameDe}/> 

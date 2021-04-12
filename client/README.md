@@ -10,17 +10,23 @@
 Come together with other participants and meet up to play games you desire while you are only speaking english.
 
 
-[Have a look at our website ](https://speacty.herokuapp.com/)
+[Have a look at our website ](https://speakty.netlify.app/)
 
 ## Tools 🔧
 * VS Code ✔️
 * Front-end : React.js  ✔️
 * Packages to communicate from back-end to front-end: axios ✔️
-* Back-end : Node.js ✔️
+* Back-end : Node.js (express)✔️
 * Packages to connect back-end : Express.js,mongoose,dotenv,cors ✔️
-* Database : MongoDB ✔️
+* Database : MongoDB  Atlas ✔️
 * Socket.io to build chatroom ✔️
 * Deploy with Heroku to bring the website online ✔️
+* SendGrid API ✔️
+* JWT for authentication ✔️
+* Web Speech API ✔️
+* Heroku to deploy back-end ✔️
+* Rest client to test back-end ✔️
+
 
 
 

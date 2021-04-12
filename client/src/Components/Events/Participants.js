@@ -18,26 +18,33 @@ import './Participants.css';
 
 
 function Participants() {
-    const [participants,setParticipants]= useState(null);
+    // const [participants,setParticipants]= useState(null);
     
 
-    useEffect( ()=> {
-        fetch('http://localhost:5000/participants')
-        .then(res =>{
-            return res.json();
-        })
-        .then(data => {
-            // console.log(data);
-            setParticipants(data);
-        });
+    //useEffect( ()=> {
+    //fetch('http://localhost:5000/participants')
+    //.then(res =>{
+    //         return res.json();
+    //     })
+    //     .then(data => {
+    //         // console.log(data);
+    //         setParticipants(data);
+    //     });
 
 
-    },[]);
-    return (
-        <div>
-        {participants && <ParticipantsList participants={participants} title="Boardgame Event Participants" />} 
-        </div>
+    // },[]);
+    // return (
+    //     <div>
+    //         <h1>Work in Progress</h1>
+    //     {participants && <ParticipantsList participants={participants} title="Boardgame Event Participants" />} 
+    //     </div>
+
+    return(
+        <>
+        <h1>WORK IN PROGRESS...</h1>
+        </>
     )
+    
 }
 
-export default Participants
+export default Participants 
