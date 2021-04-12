@@ -41,7 +41,7 @@
     position:absolute;
     top:200px;
     left:100px;
-    opacity: 0.8;   
+    opacity: 0.9;   
 
 }
 
@@ -51,6 +51,7 @@
     animation: anim 2s forwards 1s;
     text-transform: uppercase;
     letter-spacing: 1px;
+    
 }
 
 @keyframes anim {

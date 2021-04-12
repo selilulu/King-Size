@@ -1,27 +1,23 @@
-
-
-.entire-div{
-    /* min-height:100vh; */
+.entire-box{
+    min-height:70vh;
     display:flex;
     align-items: center;
     justify-content:center;
-    /* background-color:#f1f1f1; */
 }
 
-.content-section{
+.content-links{
     
-    background: no-repeat left url("learn-more.jpg");
-    background-size:48%;
+    background: no-repeat left url("matching.jpg");
+    background-size:77%;
     background-color:#fdfdfd;
     overflow:hidden;
-    /* padding:20px 0; */
 }
 .inner-wrapper{
 
-    width:55%;
+    width:48%;
     float:right;
     background-color:rgba(19,151,213,255);
-    padding:100px;
+    padding:50px;
 
 
 }
@@ -31,18 +27,13 @@
     font-weight:900;
     color:white;
 }
-.follow-steps-span{
-    font-size:25px; 
-    color:greenyellow;
 
+.gameIndex {
+ font-size: 20px;
+ color:white;
+ background-color:darkblue;
 }
 
-.step{
-    font-size:17px;
-    color:white;
-    line-height:30px;
-    text-align:justify;
-}
 
 
 @media screen and (max-width:1200px){

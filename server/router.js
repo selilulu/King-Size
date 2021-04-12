@@ -12,8 +12,10 @@ router.post("/events", createEvents )
 
 //------------------------------------------------------------------------------------------
 
-router.get("/bookings", showAllBookings)
-router.post("/bookings",createBookings)
+//router.get("/bookings", showAllBookings)
+//router.post("/bookings",createBookings)
+
+
 
 
 

@@ -30,4 +30,5 @@ route.route("/forgotpassword").post(forgotpassword);
 route.route("/resetpassword/:resetToken").put(resetpassword);
 route.route("/user/:id").get(userName);
 
+
 export default route;

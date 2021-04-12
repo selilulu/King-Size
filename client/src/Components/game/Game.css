@@ -82,3 +82,8 @@ body {
   button:disabled {
     cursor: default;
   }
+
+  .game-image{
+    width:30vw;
+    height:30vh;
+  }

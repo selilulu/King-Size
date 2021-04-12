@@ -14,13 +14,14 @@
 }
 
 
+
 .image-button{
     position: absolute;
     top: 60%;
     left: 50%;
     transform: translate(-50%, -50%);
     color:white;
-    background-image: linear-gradient(rgba(43, 120, 165, 0.658), rgba(238, 236, 232, 0.795));
+    background-image: linear-gradient(rgba(11, 12, 10, 0.781), rgba(238, 236, 232, 0.795));
     height:calc(10px+ 10vw);
     width:calc(10px+ 10vw);
 
@@ -29,11 +30,11 @@
 
 .question{
     margin:20px;
-    color:#1C4670;
     font-weight:700;
-    font-size: 33px;
+    font-size:28px;
     letter-spacing: 1px;
 }
+
 
 .learn-more-div{
     display: flex;
@@ -45,15 +46,19 @@
 
 .learn-more-btn{
     width: 180px;
-    height:48px;
+    height:45px;
     text-align: center;
     font-size:20px;
-    font-weight:800;
+    font-weight:600;
     color:rgb(24, 23, 23);
-    background-color:rgba(3, 3, 3, 0.788);
+    background-color:rgba(19,151,213,255);
     ;
 
 
+}
+.game-button {
+    font-size:25px;
+    font-weight:800;
 }
 @media all and (max-width:400px){
     .image-button{
