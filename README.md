@@ -1,4 +1,4 @@
-![Language](public/images/logo_size.jpg)
+![Language](client/public/images/logo_size.jpg)
 
 
 # ✨ Welcome to Our Speakty Language Project ✨
