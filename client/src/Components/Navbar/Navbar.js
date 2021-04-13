@@ -123,7 +123,7 @@ function Navbar() {
           </ul>
           {!isLoggedIn && (
           <Link to='Signup'>
-      <button className='btn1'>Sign Up</button>
+      <button className='btn1'>SIGN UP</button>
     </Link>
           )}
         </nav>

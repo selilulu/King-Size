@@ -75,8 +75,7 @@ const reset = () => {
   
 return (
 <>
-<a>Practice French</a>
-<h2>Choose your accent</h2>
+<h2 className="choosepairs">CHOOSE THE COMPUTER ACCENT</h2>
 <div className="luanguages">
 <ul className= "voices">
 <li>{data.fr.langA.name}:</li>
@@ -114,7 +113,7 @@ return (
           ))}
         </ul>
 </div>
-<h2>Choose the pairs</h2>
+<h2 className="choosepairs">CHOOSE THE PAIR OF WORDS AND LISTEN HOW THEY ARE PRONOUNCED</h2>
 <ul className= "choices">
     {choices.map((choice)=> (
 
@@ -133,14 +132,12 @@ return (
 
     ))}
     </ul>
+    <div className="resetButton">
     <button className="reset" onClick={() => reset()}>
-        reset
+        RESET THE GAME
       </button>
+      </div>
     </>
 );
- 
-
-   
-    
  
 }

@@ -5,7 +5,7 @@ const sendEmail = (options)  => {
         service: process.env.EMAIL_SERVICE || 'SendGrid',
         auth:{
           user: process.env.EMAIL_USERNAME || 'apikey',
-          pass: process.env.EMAIL_PASSWORD || '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'
+          pass: process.env.EMAIL_PASSWORD || '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'   
         }
     })
     const mailOptions = {

@@ -1,89 +1,123 @@
 body {
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica,
-      Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
-    font-size: 20px;
-    box-sizing: border-box;
-  }
-  
-  ul {
-    list-style: none;
-    margin: 0px;
-    padding: 0px;
-  }
-  
-  li {
-    padding-right: 0.25rem;
-    padding-bottom: 0.25rem;
-  }
-  
-  button {
-    background: none;
-    border: 2px solid #cbd5e0;
-    border-radius: 1rem;
-    cursor: pointer;
-    padding: 0.25rem 0.5rem;
-    font-size: 1.1rem;
-  }
-  
-  main {
-    max-width: 800px;
-    margin: 0 auto;
-  }
-  
-  h1,
-  h2,
-  h3 {
-    margin: 2rem 0px;
-  }
-  
-  h1 img {
-    width: 100px;
-  }
-  h1 a {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: black;
-    text-decoration: none;
-  }
-  
-  a {
-    color: #0f1d27;
-  }
-  
-  .languages {
-    display: flex;
-  }
-  
-  .voices {
-    display: flex;
-    flex-wrap: wrap;
-    padding-right: 1rem;
-  }
-  
-  .choices {
-    display: flex;
-    flex-wrap: wrap;
-    margin: 1rem 0px;
-  }
-  
-  .choices button {
-    border-color: #4096d3;
-  }
-  
-  button.reset {
-    border-color: #f34b4b;
-  }
-  
-  button.selected {
-    border-color: #68d391;
-  }
-  
-  button:disabled {
-    cursor: default;
-  }
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica,
+   Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  font-size: 20px;
+  box-sizing: border-box;
+  background-color: rgba(35, 42, 143, 0.4);
+}
 
-  .game-image{
-    width:30vw;
-    height:30vh;
-  }
+.luanguages{
+  width: 500px;
+  margin: 0 auto;
+}
+
+ul {
+  list-style: none;
+  margin: 0px;
+  padding: 0px;
+}
+
+li {
+  padding-right: 0.25rem;
+  padding-bottom: 0.25rem;
+}
+
+button {
+  background: none;
+  border: 2px solid #cbd5e0;
+  cursor: pointer;
+  padding: 1rem 1.5rem;
+  font-size: 1.1rem;
+}
+
+main {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+h1,
+h2,
+h3 {
+  margin: 2rem 0px;
+  text-align: center;
+}
+
+h1 img {
+  width: 100px;
+}
+h1 a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: black;
+  text-decoration: none;
+}
+
+a {
+  color: #0f1d27;
+}
+
+.languages {
+  display: flex;
+}
+
+.voices {
+  display: flex;
+  flex-wrap: wrap;
+  padding-right: 1rem;
+}
+
+.choices {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 1.5rem 3.5rem;
+  justify-content: center;
+}
+
+.choices button:hover {
+  
+  color:#4096d3;
+  transform:scale(1.1);
+}
+
+.choices button {
+  border-color: #4096d3;
+  margin: 0.2em;
+  border-radius: 20%;
+  cursor: pointer;
+}
+
+button.reset {
+  background-color:#f34b4b;
+  border-color: #f34b4b;
+  justify-content: center;
+  margin: 0 auto;
+  text-align: center;
+  margin-bottom:20px;
+  border-radius: 4px;
+
+}
+.resetButton{
+  display: flex;
+  justify-content: center;
+}
+
+.choices button.selected {
+  background-color:  #16527e ;
+}
+
+.voices button.selected {
+  background-color: #68d391;
+}
+
+button:disabled {
+  cursor: default;
+}
+
+.choosepairs{
+  background-color:rgba(43, 55, 226, 0.767);
+  text-align: center;
+  color:white;
+  font-weight:700;
+
+}

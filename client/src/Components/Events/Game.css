@@ -21,7 +21,7 @@
     left: 50%;
     transform: translate(-50%, -50%);
     color:white;
-    background-image: linear-gradient(rgba(11, 12, 10, 0.781), rgba(238, 236, 232, 0.795));
+    background-image: linear-gradient(rgba(32, 95, 233, 0.781), rgba(238, 236, 232, 0.795));
     height:calc(10px+ 10vw);
     width:calc(10px+ 10vw);
 
@@ -68,5 +68,3 @@
 
 }
 
-
-   

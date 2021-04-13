@@ -14,7 +14,10 @@
     box-shadow:0px 0px 15px -5px;
     transition: 0.5s;
     animation: ease-in;
+    background-color: #1DC690;
     padding-top:2rem;
+
+
 }
 
 .card-container:hover{
@@ -69,10 +72,10 @@ h3,p{
     border-radius:3px;
     
 }
-
+    
 .link-btn:hover{
     background: rgba(27, 156, 252, 0.1);
-    color:#1DC690;
+    background-color:#f1f7f5;
     transform:scale(1.1);
 }
 
